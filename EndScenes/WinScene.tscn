@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/SceneChange.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/romanus/ROMANUS.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+extra_spacing_top = 6
+extra_spacing_bottom = 6
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 398.0
+margin_top = 463.0
+margin_right = 438.0
+margin_bottom = 503.0
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+self_modulate = Color( 1, 0.752941, 0.752941, 1 )
+margin_right = 240.0
+margin_bottom = 66.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Back to Menu"
+script = ExtResource( 1 )
+scene_to_load = "res://MainMenu/MainMenu.tscn"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_Button_pressed"]

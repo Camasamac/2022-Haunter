@@ -36,8 +36,10 @@ texture = ExtResource( 5 )
 stretch_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 194.0
-margin_bottom = 66.0
+margin_left = 794.0
+margin_top = 226.0
+margin_right = 988.0
+margin_bottom = 432.0
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 self_modulate = Color( 1, 0.752941, 0.752941, 1 )
@@ -93,10 +95,6 @@ hint_tooltip = "Look forward to future updates!"
 mouse_filter = 1
 custom_fonts/font = SubResource( 3 )
 text = "Game designed by Cameron BLACK, Version 0.01"
-
-[node name="Button" type="Button" parent="."]
-margin_right = 194.0
-margin_bottom = 20.0
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="VBoxContainer/OptionsButton" method="_on_Button_pressed"]
