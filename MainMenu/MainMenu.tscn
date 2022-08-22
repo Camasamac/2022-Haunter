@@ -34,6 +34,9 @@ margin_right = 1031.0
 margin_bottom = 610.0
 texture = ExtResource( 5 )
 stretch_mode = 1
+__meta__ = {
+"_editor_description_": "Definitely considered making this picture darker, like to add a little black shadow on the whole thing to fit the horror theme."
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 794.0
@@ -49,6 +52,9 @@ size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
 text = "Start Game"
 script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "When pressing this button, the player will be transported to the main game, which is (as of typing this) a blank environment."
+}
 scene_to_load = "res://GameScene/GameScene.tscn"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
@@ -60,6 +66,9 @@ size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
 text = "Options"
 script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "When pressing this button it will transport you to the options menu, a place where you can customize certain values of the game, like Rapid Fire or Invincibility."
+}
 scene_to_load = "res://OptionsMenu/OptionsMenu.tscn"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
@@ -71,6 +80,9 @@ size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
 text = "Quit Game"
 script = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": "This button when pressed does not send you to a new scene, but instead closes the window. A proper 'quit' button at that!"
+}
 
 [node name="haunter title" type="Label" parent="."]
 margin_left = 531.0
@@ -83,7 +95,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "HAUNTER"
 __meta__ = {
-"_editor_description_": "This is the title of the game. This is designed to have a horror font."
+"_editor_description_": "This is the title of the game. This is designed to have a horror font, as to display the theme of the game."
 }
 
 [node name="designed by me" type="Label" parent="."]
@@ -94,7 +106,10 @@ margin_bottom = 599.0
 hint_tooltip = "Look forward to future updates!"
 mouse_filter = 1
 custom_fonts/font = SubResource( 3 )
-text = "Game designed by Cameron BLACK, Version 0.01"
+text = "Game designed by Cameron BLACK, Version 0.01.5"
+__meta__ = {
+"_editor_description_": "The version number should change with every edition of the game, or something new being added. The version should reach 1 when the game is finished."
+}
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="VBoxContainer/OptionsButton" method="_on_Button_pressed"]
