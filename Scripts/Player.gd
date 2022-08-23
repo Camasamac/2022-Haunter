@@ -1,9 +1,9 @@
 extends KinematicBody
 
 # Physics variables that will help for the player.
-var movementSpeed = 1.0 # How fast the player can move.
-var jumpStrength = 1.0 # How much force used to make player jump.
-var gravity = 1 # Gravity's strength.
+var movementSpeed = 4.0 # How fast the player can move.
+var jumpStrength = 7.0 # How much force used to make player jump.
+var gravity = 10 # Gravity's strength.
 
 # cam look
 var minCamVerticalAngle = -90.0		# Limit camera view to straight down.
@@ -12,7 +12,7 @@ var lookSensitivity = 0.5			# How fast camera moves. 'mouse sensitivity'.
 
 # vectors
 var playerVelocity : Vector3 = Vector3() 	# Players Velocity
-var mouseDelta : Vector2 = Vector2()			# How much the mouse has moved since last frame refresh.
+var mouseDelta : Vector2 = Vector2()		# How much the mouse has moved since last frame refresh.
 
 # player components
 onready var camera = get_node("Camera")		# "attach" the camera to access from script.
