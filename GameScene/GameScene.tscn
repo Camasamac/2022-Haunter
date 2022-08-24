@@ -1,13 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Textures/drywall.jpg" type="Texture" id=1]
+[ext_resource path="res://Textures/seamless carpet texture.jpg" type="Texture" id=1]
 [ext_resource path="res://Player Stuff/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Textures/drywall.jpg" type="Texture" id=4]
+
+[sub_resource type="QuadMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 5, 1, 1 )
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 20, 20 )
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 1 )
+metallic = 0.64
+metallic_specular = 0.65
 uv1_triplanar = true
 
 [sub_resource type="ConcavePolygonShape" id=2]
@@ -15,23 +25,296 @@ data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0,
 
 [node name="Haunter" type="Spatial"]
 
-[node name="Floor" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0330696, -0.00526834, -0.0323153 )
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.5, -0.612372, 0.612373, 0, 0.707107, 0.707106, -0.866025, -0.353553, 0.353554, 0, 0.376277, 0 )
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39518, 1.69734, -7.41092 )
+
+[node name="wall1" parent="." instance=ExtResource( 3 )]
+transform = Transform( 24.5, 0, 0, 0, 6, 0, 0, 0, 0.6, -0.0968955, 2.82329, -11.9428 )
+
+[node name="wall2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.07093e-06, 0, -0.6, 0, 6, 0, 24.5, 0, -2.62268e-08, 11.9514, 2.83219, -0.287923 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="wall3" parent="." instance=ExtResource( 3 )]
+transform = Transform( -50, 0, 9.05975e-08, 0, 6, 0, -7.54979e-06, 0, -0.6, -12.7569, 2.83219, 11.9276 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="wall4" parent="." instance=ExtResource( 3 )]
+transform = Transform( -7.78675e-07, 0, 0.6, 0, 6, 0, -17.814, 0, -2.62268e-08, -11.8055, 2.83219, -3.27376 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="wall5 (First Corridor)" parent="." instance=ExtResource( 3 )]
+transform = Transform( 10, 0, 0, 0, 6, 0, 0, 0, 0.6, -16.7905, 2.83219, 5.63189 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="wall6(First Corridor)2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 10, 0, 0, 0, 6, 0, 0, 0, 0.6, -39.3437, 2.83219, 5.63189 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="wall7" parent="." instance=ExtResource( 3 )]
+transform = Transform( 13, 0, 0, 0, 6, 0, 0, 0, 0.6, -28.0864, 2.82329, -8.10598 )
+
+[node name="wall8" parent="." instance=ExtResource( 3 )]
+transform = Transform( -6.11959e-07, 0, 0.6, 0, 6, 0, -14, 0, -2.62268e-08, -34.3638, 2.82329, -1.35311 )
+
+[node name="wall9" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1.66948e-07, 0, -0.6, 0, 6, 0, 14, 0, 7.15493e-09, -21.7014, 2.82329, -1.34128 )
+
+[node name="wall10" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.35505e-06, 0, 0.6, 0, 6, 0, -31, 0, -2.62268e-08, -44.3099, 2.82329, 21.1076 )
+
+[node name="wall11" parent="." instance=ExtResource( 3 )]
+transform = Transform( 18, 0, 0, 0, 6, 0, 0, 0, 0.6, -28.9698, 2.82329, 12.0274 )
+
+[node name="wall12" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.35505e-06, 0, -0.6, 0, 6, 0, 31, 0, -2.62268e-08, -20.5539, 2.82794, 27.5521 )
+
+[node name="wall13" parent="." instance=ExtResource( 3 )]
+transform = Transform( -18, 0, -5.24537e-08, 0, 6, 0, 1.57361e-06, 0, -0.6, -35.3476, 2.82329, 36.0845 )
+
+[node name="Floor1 (start-room)" type="MeshInstance" parent="."]
+transform = Transform( 1.2, 0, 0, 0, 1, 0, 0, 0, 1.2, 0.0330696, -0.00526834, -0.0323153 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 
-[node name="StaticBody" type="StaticBody" parent="Floor"]
+[node name="StaticBody" type="StaticBody" parent="Floor1 (start-room)"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Floor1 (start-room)/StaticBody"]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
 shape = SubResource( 2 )
 __meta__ = {
 "_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
 }
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.5, -0.612372, 0.612373, 0, 0.707107, 0.707106, -0.866025, -0.353553, 0.353554, 0, 0, 0 )
-shadow_enabled = true
+[node name="Floor2 (First Corridor)" type="MeshInstance" parent="."]
+transform = Transform( -1.50804e-08, 0, 1.638, 0, 1, 0, -0.345, 0, -7.15993e-08, -28.0442, -0.00526834, 8.7997 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39518, 1.69734, -0.0390353 )
+[node name="StaticBody" type="StaticBody" parent="Floor2 (First Corridor)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor2 (First Corridor)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor3 (1Corridor Room)" type="MeshInstance" parent="."]
+transform = Transform( 0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, -28.1025, -0.00526834, -1.38833 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor3 (1Corridor Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor3 (1Corridor Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor4 (2nd Big Room)" type="MeshInstance" parent="."]
+transform = Transform( 1.215, 0, 0, 0, 1, 0, 0, 0, 1.213, -32.6176, -0.00526262, 24.1262 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor4 (2nd Big Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor4 (2nd Big Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor5 (To Kitchen)" type="MeshInstance" parent="."]
+transform = Transform( -1.50804e-08, 0, 0.29, 0, 1, 0, -0.345, 0, -1.26763e-08, -23.4825, -0.00526834, 39.5484 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor5 (To Kitchen)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor5 (To Kitchen)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor6 (Kitchen)" type="MeshInstance" parent="."]
+transform = Transform( 2.1, 0, 0, 0, 1, 0, 0, 0, 1.7, -5.41443, -0.00526262, 59.7363 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor6 (Kitchen)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor6 (Kitchen)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor7 (1Secret Entrance)" type="MeshInstance" parent="."]
+transform = Transform( -1.50804e-08, 0, 0.29, 0, 1, 0, -0.345, 0, -1.26763e-08, 3.78678, -0.00526834, 39.5484 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor7 (1Secret Entrance)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor7 (1Secret Entrance)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor8 (1 Secret Room)" type="MeshInstance" parent="."]
+transform = Transform( 0.9, 0, 0, 0, 1, 0, 0, 0, 1, -2.25099, -0.00526834, 26.4569 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor8 (1 Secret Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor8 (1 Secret Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor9 (exit kitchen)" type="MeshInstance" parent="."]
+transform = Transform( -1.50804e-08, 0, 0.29, 0, 1, 0, -0.345, 0, -1.26763e-08, -29.1942, 0.0527723, 73.2669 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor9 (exit kitchen)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor9 (exit kitchen)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor10 (deteriorating room)" type="MeshInstance" parent="."]
+transform = Transform( 1.7, 0, 0, 0, 1, 0, 0, 0, 1.2, -48.7831, -0.00526834, 64.7856 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor10 (deteriorating room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor10 (deteriorating room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor11 (corridor2)" type="MeshInstance" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 1, 0, 0, 0, 2.7, -56.8952, -0.00526834, 26.1421 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor11 (corridor2)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor11 (corridor2)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor12 (look out! room)" type="MeshInstance" parent="."]
+transform = Transform( 1.4, 0, 0, 0, 1, 0, 0, 0, 1, -55.8523, -0.00526834, -10.7788 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor12 (look out! room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor12 (look out! room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor13 (corridor filled with doors)" type="MeshInstance" parent="."]
+transform = Transform( 2.2, 0, 0, 0, 1, 0, 0, 0, 0.8, -84.521, -0.00526834, 25.7161 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor13 (corridor filled with doors)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor13 (corridor filled with doors)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor14 (2 Secret Room)" type="MeshInstance" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, -72.7993, -0.00526834, 41.7423 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor14 (2 Secret Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor14 (2 Secret Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor15 (3 Secret Room)" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.4, -95.5622, -0.00526834, 13.9914 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor15 (3 Secret Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor15 (3 Secret Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor16 (Arena Room)" type="MeshInstance" parent="."]
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 3, -130.852, -0.00526834, 26.2788 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor16 (Arena Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor16 (Arena Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor17 (end room)" type="MeshInstance" parent="."]
+transform = Transform( 0.8, 0, 0, 0, 1, 0, 0, 0, 0.7, -163.535, -0.00526834, 26.2788 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor17 (end room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor17 (end room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}

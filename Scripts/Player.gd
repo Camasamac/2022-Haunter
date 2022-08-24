@@ -1,7 +1,7 @@
 extends KinematicBody
 
 # Physics variables that will help for the player.
-var movementSpeed = 4.0 # How fast the player can move.
+var movementSpeed = 8.0 # How fast the player can move.
 var jumpStrength = 7.0 # How much force used to make player jump.
 var gravity = 10 # Gravity's strength.
 
