@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Textures/seamless carpet texture.jpg" type="Texture" id=1]
 [ext_resource path="res://Player Stuff/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://metallic-wall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Textures/drywall.jpg" type="Texture" id=4]
+[ext_resource path="res://floor1.tscn" type="PackedScene" id=5]
 
 [sub_resource type="QuadMesh" id=4]
 
@@ -18,7 +19,7 @@ size = Vector2( 20, 20 )
 albedo_texture = ExtResource( 1 )
 metallic = 0.64
 metallic_specular = 0.65
-uv1_triplanar = true
+uv1_scale = Vector3( 0.329, 1, 0.535 )
 
 [sub_resource type="ConcavePolygonShape" id=2]
 data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
@@ -81,33 +82,25 @@ transform = Transform( -1.35505e-06, 0, -0.6, 0, 6, 0, 31, 0, -2.62268e-08, -20.
 [node name="wall13" parent="." instance=ExtResource( 3 )]
 transform = Transform( -18, 0, -5.24537e-08, 0, 6, 0, 1.57361e-06, 0, -0.6, -35.3476, 2.82329, 36.0845 )
 
-[node name="Floor1 (start-room)" type="MeshInstance" parent="."]
-transform = Transform( 1.2, 0, 0, 0, 1, 0, 0, 0, 1.2, 0.0330696, -0.00526834, -0.0323153 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
+[node name="wall14" parent="." instance=ExtResource( 3 )]
+transform = Transform( 21.5, 0, 0, 0, 6, 0, 0, 0, 0.6, -9.86839, 2.82329, 42.9763 )
 
-[node name="StaticBody" type="StaticBody" parent="Floor1 (start-room)"]
+[node name="wall15" parent="." instance=ExtResource( 3 )]
+transform = Transform( 18.2, 0, 0, 0, 6, 0, 0, 0, 0.6, -2.27426, 2.82329, 16.5958 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Floor1 (start-room)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
+[node name="wall16 (small wall)" parent="." instance=ExtResource( 3 )]
+transform = Transform( -2.97237e-07, 0, 0.6, 0, 6, 0, -6.8, 0, -2.62268e-08, 0.867598, 2.82329, 39.5857 )
 
-[node name="Floor2 (First Corridor)" type="MeshInstance" parent="."]
-transform = Transform( -1.50804e-08, 0, 1.638, 0, 1, 0, -0.345, 0, -7.15993e-08, -28.0442, -0.00526834, 8.7997 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
+[node name="wall17" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.14961e-06, 0, -0.6, 0, 6, 0, 26.3, 0, -2.62268e-08, 6.60344, 2.82329, 29.8213 )
 
-[node name="StaticBody" type="StaticBody" parent="Floor2 (First Corridor)"]
+[node name="wall18" parent="." instance=ExtResource( 3 )]
+transform = Transform( -12, 0, -9.05975e-08, 0, 6, 0, 1.81195e-06, 0, -0.6, -5.11157, 2.82329, 36.2018 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Floor2 (First Corridor)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
+[node name="Floor1 (start-room)" parent="." instance=ExtResource( 5 )]
+
+[node name="Floor1 (start-room)2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1.655, 0, 0, 0, 1, 0, 0, 0, 0.411, -27.8957, -0.00526834, 8.08278 )
 
 [node name="Floor3 (1Corridor Room)" type="MeshInstance" parent="."]
 transform = Transform( 0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, -28.1025, -0.00526834, -1.38833 )
@@ -211,6 +204,9 @@ __meta__ = {
 transform = Transform( 1.7, 0, 0, 0, 1, 0, 0, 0, 1.2, -48.7831, -0.00526834, 64.7856 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
+__meta__ = {
+"_editor_description_": "This room may be given a taller ceiling for the experimentation of a platforming area, as it would be bad to have a platforming area in level 1 and assume people know how to do it already."
+}
 
 [node name="StaticBody" type="StaticBody" parent="Floor10 (deteriorating room)"]
 
@@ -236,7 +232,7 @@ __meta__ = {
 }
 
 [node name="Floor12 (look out! room)" type="MeshInstance" parent="."]
-transform = Transform( 1.4, 0, 0, 0, 1, 0, 0, 0, 1, -55.8523, -0.00526834, -10.7788 )
+transform = Transform( 1.4, 0, 0, 0, 1, 0, 0, 0, 1, -64.7785, -0.00526834, -10.7788 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 
@@ -264,7 +260,7 @@ __meta__ = {
 }
 
 [node name="Floor14 (2 Secret Room)" type="MeshInstance" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, -72.7993, -0.00526834, 41.7423 )
+transform = Transform( 0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, -72.7993, -0.00526834, 41.6287 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 
@@ -317,4 +313,82 @@ transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
 shape = SubResource( 2 )
 __meta__ = {
 "_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="CSGBox1" type="CSGBox" parent="."]
+transform = Transform( -1.43461e-07, 0, 1, 0, 1, 0, -3.282, 0, -4.37114e-08, 7.44016, 0.990792, -5.83578 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is where the main room's couch is, something to test the collision of the player."
+}
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( -1.25539e-07, 0, 0.186, 0, 1.874, 0, -2.872, 0, -8.13032e-09, -11.7456, 3.01132, -6.04898 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the tv, this should be something to interact with to make sure the basics of interaction are applicable."
+}
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( -1.12251, 0, 0.939693, 0, 1, 0, -3.08407, 0, -0.34202, -24.7752, 0.990792, 17.2135 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is where the main room's couch is, but this one is a faker. The player should know the similarity in this room, or at least, wonder who lives here."
+}
+
+[node name="CSGBox4" type="CSGBox" parent="."]
+transform = Transform( -1.31134e-07, 0, 4, 0, 2.501, 0, -3, 0, -1.74846e-07, -32.9261, 2.35353, 26.8347 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the box that holds the tv, coincidentally used as a barrier to hide enemies >:)"
+}
+
+[node name="CSGBox5" type="CSGBox" parent="."]
+transform = Transform( 14, 0, 0, 0, 2, 0, 0, 0, 2, -12.4172, 1.87105, 54.6112 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "Cabinets to make the kitchen smaller to the player, despite it's size."
+}
+
+[node name="CSGBox6" type="CSGBox" parent="."]
+transform = Transform( -1.74846e-07, 0, 4, 0, 1, 0, -4, 0, -1.74846e-07, -4.79375, 0.878354, 22.4826 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "Hidden Room object, definitely to interact with. This is like a pedestal, perhaps a torn up bed? It would really add to the torn upenvrionment."
+}
+
+[node name="CSGBox7" type="CSGBox" parent="."]
+transform = Transform( -3.1965, 0, 1.14, 0, 0.219, 0, -1.8455, 0, -1.97454, -53.4708, 0.173916, 66.1251 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is a cracked tv, showing screenings of various glitchy screens, and perhaps joke content."
+}
+
+[node name="CSGBox8" type="CSGBox" parent="."]
+transform = Transform( 4.128, 0, 0, 0, 2.656, 0, 0, 0, 2.28, -60.6982, 3.01613, 20.058 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "Big Crate that an enemy can hide behind. Peek a boo!"
+}
+
+[node name="CSGBox9" type="CSGBox" parent="."]
+transform = Transform( -1.80441e-07, 0, 2.28, 0, 2.656, 0, -4.128, 0, -9.9662e-08, -82.653, 3.01613, 29.6859 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "Big Crate that an enemy can hide behind. Peek a boo!"
+}
+
+[node name="CSGBox10" type="CSGBox" parent="."]
+transform = Transform( -3.49691e-07, 0, 7, 0, 11, 0, -8, 0, -3.0598e-07, -135.042, 10.8065, 27.0364 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGCylinder1" type="CSGCylinder" parent="."]
+transform = Transform( 8, 0, 0, 0, 1.568, 0, 0, 0, 4.673, 0, 0.600182, 68.4336 )
+use_collision = true
+smooth_faces = false
+__meta__ = {
+"_editor_description_": "This is ideally the dining table, with various things around it to interact with."
 }

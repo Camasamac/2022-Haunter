@@ -12,7 +12,7 @@ uv1_scale = Vector3( 5, 1, 1 )
 extents = Vector3( 0.200001, 0.193936, 1 )
 
 [node name="Spatial" type="MeshInstance"]
-transform = Transform( 2, 0, 0, 0, 2.304, 0, 0, 0, 0.6, 0, 0, 0 )
+transform = Transform( 2, 0, 0, 0, 2.664, 0, 0, 0, 0.6, 0, 1.41736, 0 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
