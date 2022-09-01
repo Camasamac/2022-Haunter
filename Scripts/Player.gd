@@ -39,6 +39,8 @@ func _process (delta):
 	# reset the mouse delta vector
 	mouseDelta = Vector2()
 
+	$Camera/CurrentScoreNumberText.text = str(Global.Current_Score)
+
 # called every physics step
 func _physics_process (delta):
 	# reset the x and z velocity

@@ -18,3 +18,14 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.927507, 0.000175178 )
 environment = ExtResource( 1 )
 current = true
+
+[node name="CurrentScoreText" type="Label" parent="Camera"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Current Score:"
+
+[node name="CurrentScoreNumberText" type="Label" parent="Camera"]
+margin_left = 94.0
+margin_top = -1.0
+margin_right = 134.0
+margin_bottom = 13.0

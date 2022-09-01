@@ -18,6 +18,10 @@ config/name="FPS Haunter"
 run/main_scene="res://MainMenu/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [input]
 
 player_forward={

@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 0.06, 0, 0, 0, 0.744, 0, 0, 0, 0.06, 0, 0.670227, 0 )
+use_collision = true
+
+[node name="SpotLight" type="SpotLight" parent="CSGBox"]
+transform = Transform( 16.6667, 0, 0, 0, -7.28523e-07, 1.34409, 0, -16.6667, -9.03369e-06, 0, 3.50328, -2.96393 )
+light_energy = 2.055

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Textures/seamless carpet texture.jpg" type="Texture" id=1]
 [ext_resource path="res://Player Stuff/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://metallic-wall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Textures/drywall.jpg" type="Texture" id=4]
-[ext_resource path="res://floor1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Pickup Object.tscn" type="PackedScene" id=5]
+[ext_resource path="res://LampPost.tscn" type="PackedScene" id=6]
 
 [sub_resource type="QuadMesh" id=4]
 
@@ -28,6 +29,7 @@ data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0,
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.5, -0.612372, 0.612373, 0, 0.707107, 0.707106, -0.866025, -0.353553, 0.353554, 0, 0.376277, 0 )
+visible = false
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -71,16 +73,16 @@ transform = Transform( -6.11959e-07, 0, 0.6, 0, 6, 0, -14, 0, -2.62268e-08, -34.
 transform = Transform( 1.66948e-07, 0, -0.6, 0, 6, 0, 14, 0, 7.15493e-09, -21.7014, 2.82329, -1.34128 )
 
 [node name="wall10" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1.35505e-06, 0, 0.6, 0, 6, 0, -31, 0, -2.62268e-08, -44.3099, 2.82329, 21.1076 )
+transform = Transform( -1.35505e-06, 0, 0.6, 0, 9, 0, -31, 0, -2.62268e-08, -44.3099, 4.43791, 21.1076 )
 
 [node name="wall11" parent="." instance=ExtResource( 3 )]
-transform = Transform( 18, 0, 0, 0, 6, 0, 0, 0, 0.6, -28.9698, 2.82329, 12.0274 )
+transform = Transform( 18, 0, 0, 0, 9, 0, 0, 0, 0.6, -28.7803, 4.33031, 12.0274 )
 
 [node name="wall12" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1.35505e-06, 0, -0.6, 0, 6, 0, 31, 0, -2.62268e-08, -20.5539, 2.82794, 27.5521 )
+transform = Transform( -1.35505e-06, 0, -0.6, 0, 9, 0, 31, 0, -2.62268e-08, -20.6175, 4.24451, 27.5521 )
 
 [node name="wall13" parent="." instance=ExtResource( 3 )]
-transform = Transform( -18, 0, -5.24537e-08, 0, 6, 0, 1.57361e-06, 0, -0.6, -35.3476, 2.82329, 36.0845 )
+transform = Transform( -18, 0, -9.05975e-08, 0, 9, 0, 2.71792e-06, 0, -0.6, -35.3476, 4.42195, 36.0845 )
 
 [node name="wall14" parent="." instance=ExtResource( 3 )]
 transform = Transform( 21.5, 0, 0, 0, 6, 0, 0, 0, 0.6, -9.86839, 2.82329, 42.9763 )
@@ -97,10 +99,64 @@ transform = Transform( -1.14961e-06, 0, -0.6, 0, 6, 0, 26.3, 0, -2.62268e-08, 6.
 [node name="wall18" parent="." instance=ExtResource( 3 )]
 transform = Transform( -12, 0, -9.05975e-08, 0, 6, 0, 1.81195e-06, 0, -0.6, -5.11157, 2.82329, 36.2018 )
 
-[node name="Floor1 (start-room)" parent="." instance=ExtResource( 5 )]
+[node name="wall19" parent="." instance=ExtResource( 3 )]
+transform = Transform( -8.74228e-07, 0, 0.6, 0, 6, 0, -20, 0, -2.62268e-08, -11.0268, 2.82329, 26.3636 )
 
-[node name="Floor1 (start-room)2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1.655, 0, 0, 0, 1, 0, 0, 0, 0.411, -27.8957, -0.00526834, 8.08278 )
+[node name="wall20" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.48619e-06, 0, 0.6, 0, 6, 0, -34, 0, -2.62268e-08, -26.4343, 2.82329, 53.0475 )
+
+[node name="wall21" parent="." instance=ExtResource( 3 )]
+transform = Transform( 4.05446e-07, 0, -0.6, 0, 6, 0, 34, 0, 7.15493e-09, 15.5787, 2.82329, 59.877 )
+
+[node name="wall22" parent="." instance=ExtResource( 3 )]
+transform = Transform( -48, 0, -9.05975e-08, 0, 6, 0, 7.2478e-06, 0, -0.6, -8.47482, 2.82329, 76.2363 )
+
+[node name="wall23" parent="." instance=ExtResource( 3 )]
+transform = Transform( 5.5, 0, 0, 0, 6, 0, 0, 0, 0.6, -29.1339, 2.82329, 69.7542 )
+
+[node name="wall24" parent="." instance=ExtResource( 3 )]
+transform = Transform( 9, 0, 0, 0, 6, 0, 0, 0, 0.6, 11.1166, 2.82329, 42.896 )
+
+[node name="wall25" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.04907e-06, 0, 0.6, 0, 14, 0, -24, 0, -2.62268e-08, -65.7156, 6.75209, 64.9232 )
+
+[node name="wall26" parent="." instance=ExtResource( 3 )]
+transform = Transform( -7.43094e-07, 0, -0.6, 0, 14, 0, 17, 0, -2.62268e-08, -31.7647, 6.83015, 61.2526 )
+
+[node name="wall27" parent="." instance=ExtResource( 3 )]
+transform = Transform( -34, 0, -9.05975e-08, 0, 14, 0, 5.13386e-06, 0, -0.6, -49.1728, 6.75209, 76.1718 )
+
+[node name="wall28" parent="." instance=ExtResource( 3 )]
+transform = Transform( 19.2, 0, 0, 0, 14, 0, 0, 0, 0.6, -41.3831, 6.83015, 52.7737 )
+
+[node name="wall29" parent="." instance=ExtResource( 3 )]
+transform = Transform( 3, 0, 0, 0, 14, 0, 0, 0, 0.6, -64.3746, 6.83015, 53.0086 )
+
+[node name="wall30" parent="." instance=ExtResource( 3 )]
+transform = Transform( -8.39259e-07, 0, 0.6, 0, 14, 0, -19.2, 0, -2.62268e-08, -62.8805, 6.83015, 43.4699 )
+
+[node name="wall31" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4, 0, -9.05975e-08, 0, 14, 0, 6.03983e-07, 0, -0.6, -64.8046, 6.83015, 33.9298 )
+
+[node name="wall32" parent="." instance=ExtResource( 3 )]
+transform = Transform( -3.23464e-06, 0, -0.6, 0, 14, 0, 74, 0, -2.62268e-08, -50.9746, 6.83015, 15.9682 )
+
+[node name="wall33" parent="." instance=ExtResource( 3 )]
+transform = Transform( -3.0598e-07, 0, -0.6, 0, 8, 0, 7, 0, -2.62268e-08, -31.8986, 9.72493, 73.053 )
+
+[node name="Floor(corridor1)" type="MeshInstance" parent="."]
+transform = Transform( 1.614, 0, 0, 0, 1, 0, 0, 0, 0.353, -28.2186, 0.0145299, 8.74319 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor(corridor1)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor(corridor1)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
 
 [node name="Floor3 (1Corridor Room)" type="MeshInstance" parent="."]
 transform = Transform( 0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, -28.1025, -0.00526834, -1.38833 )
@@ -110,6 +166,20 @@ material/0 = SubResource( 3 )
 [node name="StaticBody" type="StaticBody" parent="Floor3 (1Corridor Room)"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor3 (1Corridor Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor2" type="MeshInstance" parent="."]
+transform = Transform( 1.3, 0, 0, 0, 1, 0, 0, 0, 1.3, 0.467607, -0.00526834, -0.334311 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor2/StaticBody"]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
 shape = SubResource( 2 )
 __meta__ = {
@@ -187,7 +257,7 @@ __meta__ = {
 }
 
 [node name="Floor9 (exit kitchen)" type="MeshInstance" parent="."]
-transform = Transform( -1.50804e-08, 0, 0.29, 0, 1, 0, -0.345, 0, -1.26763e-08, -29.1942, 0.0527723, 73.2669 )
+transform = Transform( -1.50804e-08, 0, 0.29, 0, 1, 0, -0.345, 0, -1.26763e-08, -29.1942, 0.0527723, 73.0614 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 
@@ -246,7 +316,7 @@ __meta__ = {
 }
 
 [node name="Floor13 (corridor filled with doors)" type="MeshInstance" parent="."]
-transform = Transform( 2.2, 0, 0, 0, 1, 0, 0, 0, 0.8, -84.521, -0.00526834, 25.7161 )
+transform = Transform( 2.2, 0, 0, 0, 1, 0, 0, 0, 0.8, -84.521, -0.00526834, 25.8842 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 
@@ -385,6 +455,20 @@ __meta__ = {
 "_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
 }
 
+[node name="CSGBox11" type="CSGBox" parent="."]
+transform = Transform( -1.31134e-07, 0, 3.5, 0, 2, 0, -3, 0, -1.5299e-07, -119.379, 1.90792, 9.32133 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGBox12" type="CSGBox" parent="."]
+transform = Transform( -1.31134e-07, 0, 3.5, 0, 4, 0, -3, 0, -1.5299e-07, -133.486, 3.84313, 1.26477 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
 [node name="CSGCylinder1" type="CSGCylinder" parent="."]
 transform = Transform( 8, 0, 0, 0, 1.568, 0, 0, 0, 4.673, 0, 0.600182, 68.4336 )
 use_collision = true
@@ -392,3 +476,9 @@ smooth_faces = false
 __meta__ = {
 "_editor_description_": "This is ideally the dining table, with various things around it to interact with."
 }
+
+[node name="Pickup Object" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16679, 0.671806, -1.52429 )
+
+[node name="Spatial" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.436714, 5.95489 )
