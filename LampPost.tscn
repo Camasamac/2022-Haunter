@@ -1,11 +1,32 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="ShaderMaterial" id=1]
 
 [node name="Spatial" type="Spatial"]
+transform = Transform( 0.163, 0, 0, 0, 1, 0, 0, 0, 0.164, 0, 0, 0 )
 
-[node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 0.06, 0, 0, 0, 0.744, 0, 0, 0, 0.06, 0, 0.670227, 0 )
+[node name="LampBase" type="CSGBox" parent="."]
+transform = Transform( 5, 0, 0, 0, 0.102, 0, 0, 0, 5, 0, 0, 0 )
+use_collision = true
+material = SubResource( 1 )
+
+[node name="LampPole" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 1.5719, 0 )
 use_collision = true
 
-[node name="SpotLight" type="SpotLight" parent="CSGBox"]
-transform = Transform( 16.6667, 0, 0, 0, -7.28523e-07, 1.34409, 0, -16.6667, -9.03369e-06, 0, 3.50328, -2.96393 )
-light_energy = 2.055
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 6.13497, 0, 0, 0, -2.66533e-07, 1, 0, -6.09756, -1.6252e-06, 0, 3.02305, -3.78883 )
+light_energy = 1.468
+spot_range = 4.0
+spot_angle = 50.0
+
+[node name="SpotLight2" type="SpotLight" parent="."]
+transform = Transform( 6.13497, 0, 0, 0, -2.66533e-07, 1, 0, -6.09756, -1.6252e-06, 0, 3.02112, 3.76326 )
+light_energy = 1.468
+spot_range = 4.0
+spot_angle = 50.0
+
+[node name="LampHead" type="CSGPolygon" parent="."]
+transform = Transform( -4.37114e-07, 0, 8, 0, 1, 0, -10, 0, -3.49691e-07, 4.13716, 3.04242, 3.51994 )
+use_collision = true
+polygon = PoolVector2Array( -0.287413, -0.0233955, 0.0709935, 0.88419, 0.651545, 0.890497, 1, 0 )

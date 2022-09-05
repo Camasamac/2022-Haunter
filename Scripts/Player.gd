@@ -18,13 +18,22 @@ var mouseDelta : Vector2 = Vector2()		# How much the mouse has moved since last 
 onready var camera = get_node("Camera")		# "attach" the camera to access from script.
 
 func _ready():
-	pass 
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 # called when an input is detected
 func _input (event):
-	# did the mouse move?
+	# THIS BLOCK OF CODE MEANS THAT ONCE THE WINDOW IS CLICKED THE MOUSE IS CAPTURED AND IF YOU PRESS ESCAPE IT IS FREED.
 	if event is InputEventMouseMotion:
 		mouseDelta = event.relative
+	if event.is_action_pressed("shoot"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		#Did the mouse move?
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseMotion:
+			mouseDelta = event.relative
 		
 # called every frame
 func _process (delta):
