@@ -33,7 +33,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39518, 1.69734, -7.41092 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39518, 1.99787, -7.41092 )
 
 [node name="wall1" parent="." instance=ExtResource( 3 )]
 transform = Transform( 24.5, 0, 0, 0, 6, 0, 0, 0, 0.6, -0.0968955, 2.82329, -11.9428 )
@@ -109,7 +109,7 @@ transform = Transform( -1.48619e-06, 0, 0.6, 0, 6, 0, -34, 0, -2.62268e-08, -26.
 transform = Transform( 4.05446e-07, 0, -0.6, 0, 6, 0, 34, 0, 7.15493e-09, 15.5787, 2.82329, 59.877 )
 
 [node name="wall22" parent="." instance=ExtResource( 3 )]
-transform = Transform( -48, 0, -9.05975e-08, 0, 6, 0, 7.2478e-06, 0, -0.6, -8.47482, 2.82329, 76.2363 )
+transform = Transform( -48, 0, -9.05975e-08, 0, 6, 0, 7.2478e-06, 0, -0.6, -8.47482, 2.82329, 76.4872 )
 
 [node name="wall23" parent="." instance=ExtResource( 3 )]
 transform = Transform( 5.5, 0, 0, 0, 6, 0, 0, 0, 0.6, -29.1339, 2.82329, 69.7542 )
@@ -121,10 +121,10 @@ transform = Transform( 9, 0, 0, 0, 6, 0, 0, 0, 0.6, 11.1166, 2.82329, 42.896 )
 transform = Transform( -1.04907e-06, 0, 0.6, 0, 14, 0, -24, 0, -2.62268e-08, -65.7156, 6.75209, 64.9232 )
 
 [node name="wall26" parent="." instance=ExtResource( 3 )]
-transform = Transform( -7.43094e-07, 0, -0.6, 0, 14, 0, 17, 0, -2.62268e-08, -31.7647, 6.83015, 61.2526 )
+transform = Transform( -7.43094e-07, 0, -0.6, 0, 14, 0, 17, 0, -2.62268e-08, -31.953, 6.83015, 61.2526 )
 
 [node name="wall27" parent="." instance=ExtResource( 3 )]
-transform = Transform( -34, 0, -9.05975e-08, 0, 14, 0, 5.13386e-06, 0, -0.6, -49.1728, 6.75209, 76.1718 )
+transform = Transform( -35, 0, -9.05975e-08, 0, 14, 0, 5.28485e-06, 0, -0.6, -48.9691, 6.75209, 76.4376 )
 
 [node name="wall28" parent="." instance=ExtResource( 3 )]
 transform = Transform( 19.287, 0, 0, 0, 14, 0, 0, 0, 0.6, -41.3831, 6.83015, 52.7737 )
@@ -136,7 +136,7 @@ transform = Transform( 3, 0, 0, 0, 14, 0, 0, 0, 0.6, -64.3746, 6.83015, 53.0086 
 transform = Transform( -8.39259e-07, 0, 0.6, 0, 14, 0, -19.2, 0, -2.62268e-08, -62.8805, 6.83015, 43.4699 )
 
 [node name="wall31" parent="." instance=ExtResource( 3 )]
-transform = Transform( -4, 0, -9.05975e-08, 0, 14, 0, 6.03983e-07, 0, -0.6, -64.8046, 6.83015, 33.9298 )
+transform = Transform( -7, 0, -9.05975e-08, 0, 14, 0, 1.05697e-06, 0, -0.6, -66.2431, 6.83015, 33.9298 )
 
 [node name="wall32" parent="." instance=ExtResource( 3 )]
 transform = Transform( -3.23464e-06, 0, -0.6, 0, 14, 0, 74, 0, -2.62268e-08, -50.9746, 6.83015, 15.9682 )
@@ -160,7 +160,55 @@ transform = Transform( -16, 0, -5.24537e-08, 0, 14, 0, 1.39876e-06, 0, -0.6, -70
 transform = Transform( -8.39259e-07, 0, 0.6, 0, 14, 0, -19.2, 0, -2.62268e-08, -63.05, 6.83015, 8.45529 )
 
 [node name="wall39" parent="." instance=ExtResource( 3 )]
-transform = Transform( 28, 0, 0, 0, 14, 0, 0, 0, 0.6, -77.0127, 6.83015, 17.9794 )
+transform = Transform( 30, 0, 0, 0, 14, 0, 0, 0, 0.6, -77.8602, 6.83015, 17.9794 )
+
+[node name="wall40" parent="." instance=ExtResource( 3 )]
+transform = Transform( -12, 0, -9.05975e-08, 0, 6, 0, 1.81195e-06, 0, -0.6, -72.6127, 3.1253, 49.397 )
+
+[node name="wall41" parent="." instance=ExtResource( 3 )]
+transform = Transform( -6.99382e-07, 0, -0.6, 0, 6, 0, 16, 0, -2.62268e-08, -66.7474, 3.1253, 41.8264 )
+
+[node name="wall42" parent="." instance=ExtResource( 3 )]
+transform = Transform( -6.99382e-07, 0, 0.6, 0, 6, 0, -16, 0, -2.62268e-08, -78.4845, 3.1253, 41.8264 )
+
+[node name="wall43" parent="." instance=ExtResource( 3 )]
+transform = Transform( -31, 0, -9.05975e-08, 0, 14, 0, 4.68087e-06, 0, -0.6, -90.6822, 6.83015, 33.9298 )
+
+[node name="wall44" parent="." instance=ExtResource( 3 )]
+transform = Transform( -6, 0, -9.05975e-08, 0, 8, 0, 9.05975e-07, 0, -0.6, -72.521, 9.78089, 33.9298 )
+
+[node name="wall45" parent="." instance=ExtResource( 3 )]
+transform = Transform( -3.49691e-07, 0, -0.6, 0, 6, 0, 8, 0, -2.62268e-08, -90.7448, 3.1253, 14.0083 )
+
+[node name="wall46" parent="." instance=ExtResource( 3 )]
+transform = Transform( -3.49691e-07, 0, 0.6, 0, 6, 0, -8, 0, -2.62268e-08, -100.348, 3.1253, 14.0083 )
+
+[node name="wall47" parent="." instance=ExtResource( 3 )]
+transform = Transform( 10, 0, 0, 0, 6, 0, 0, 0, 0.6, -95.6022, 3.1253, 10.2579 )
+
+[node name="wall48" parent="." instance=ExtResource( 3 )]
+transform = Transform( 9, 0, 0, 0, 14, 0, 0, 0, 0.6, -102.112, 6.83015, 17.9794 )
+
+[node name="wall49" parent="." instance=ExtResource( 3 )]
+transform = Transform( 6, 0, 0, 0, 8, 0, 0, 0, 0.6, -95.174, 9.78089, 17.9079 )
+
+[node name="wall50" parent="." instance=ExtResource( 3 )]
+transform = Transform( -2.66639e-06, 0, 0.6, 0, 30, 0, -61, 0, -2.62268e-08, -155.098, 14.8264, 26.0924 )
+
+[node name="wall51" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.00536e-06, 0, -0.6, 0, 42, 0, 23, 0, -2.62268e-08, -106.107, 20.8263, 45.0948 )
+
+[node name="wall52" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.00536e-06, 0, -0.6, 0, 42, 0, 23, 0, -2.62268e-08, -106.108, 20.8982, 6.86507 )
+
+[node name="wall53" parent="." instance=ExtResource( 3 )]
+transform = Transform( -8.74228e-07, 0, -0.6, 0, 28.6, 0, 20, 0, -2.62268e-08, -106.068, 27.5648, 26.1653 )
+
+[node name="wall54" parent="." instance=ExtResource( 3 )]
+transform = Transform( 50, 0, 0, 0, 42, 0, 0, 0, 0.6, -130.27, 20.7682, -3.11601 )
+
+[node name="wall55" parent="." instance=ExtResource( 3 )]
+transform = Transform( -50, 0, -5.24537e-08, 0, 42, 0, 4.37114e-06, 0, -0.6, -130.27, 20.7682, 56.0393 )
 
 [node name="Floor(corridor1)" type="MeshInstance" parent="."]
 transform = Transform( 1.614, 0, 0, 0, 1, 0, 0, 0, 0.353, -28.2186, 0.0145299, 8.74319 )
@@ -348,7 +396,7 @@ __meta__ = {
 }
 
 [node name="Floor14 (2 Secret Room)" type="MeshInstance" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, -72.7993, -0.00526834, 41.6287 )
+transform = Transform( 0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, -72.5836, -0.00526834, 41.6287 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 
@@ -390,7 +438,7 @@ __meta__ = {
 }
 
 [node name="Floor17 (end room)" type="MeshInstance" parent="."]
-transform = Transform( 0.8, 0, 0, 0, 1, 0, 0, 0, 0.7, -163.535, -0.00526834, 26.2788 )
+transform = Transform( 0.8, 0, 0, 0, 1, 0, 0, 0, 0.7, -163.095, 29.7017, 26.2788 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 
@@ -466,22 +514,22 @@ __meta__ = {
 "_editor_description_": "Big Crate that an enemy can hide behind. Peek a boo!"
 }
 
-[node name="CSGBox10" type="CSGBox" parent="."]
-transform = Transform( -3.49691e-07, 0, 7, 0, 11, 0, -8, 0, -3.0598e-07, -135.042, 10.8065, 27.0364 )
+[node name="CSGBoxTower(8)" type="CSGBox" parent="."]
+transform = Transform( -3.0598e-07, 0, 7, 0, 16, 0, -7, 0, -3.0598e-07, -127.848, 15.4601, 27.0364 )
 use_collision = true
 __meta__ = {
 "_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
 }
 
 [node name="CSGBox11" type="CSGBox" parent="."]
-transform = Transform( -1.31134e-07, 0, 3.5, 0, 2, 0, -3, 0, -1.5299e-07, -119.379, 1.90792, 9.32133 )
+transform = Transform( -1.31134e-07, 0, 3.5, 0, 2, 0, -3, 0, -1.5299e-07, -119.379, 0.924652, 9.32133 )
 use_collision = true
 __meta__ = {
 "_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
 }
 
 [node name="CSGBox12" type="CSGBox" parent="."]
-transform = Transform( -1.31134e-07, 0, 3.5, 0, 4, 0, -3, 0, -1.5299e-07, -133.486, 3.84313, 1.26477 )
+transform = Transform( -1.31134e-07, 0, 3.5, 0, 4, 0, -3, 0, -1.5299e-07, -129.921, 1.93886, 1.97868 )
 use_collision = true
 __meta__ = {
 "_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
@@ -499,6 +547,69 @@ transform = Transform( 3, 0, 0, 0, 5, 0, 0, 0, 3, -53.9939, 5.19519, 10.6501 )
 use_collision = true
 __meta__ = {
 "_editor_description_": "Big Crate that an enemy can hide behind. Peek a boo!"
+}
+
+[node name="CSGBox15" type="CSGBox" parent="."]
+transform = Transform( -1.74846e-07, 0, 9, 0, 0.5, 0, -4, 0, -3.93403e-07, -131.9, 15.4018, 52.2959 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGBox16" type="CSGBox" parent="."]
+transform = Transform( -1.31134e-07, 0, 3.5, 0, 3, 0, -3, 0, -1.5299e-07, -142.017, 6.17281, 10.2569 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGBox17" type="CSGBox" parent="."]
+transform = Transform( -1.31134e-07, 0, 3.5, 0, 3, 0, -3, 0, -1.5299e-07, -149.303, 10.0874, 22.4415 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGBox18" type="CSGBox" parent="."]
+transform = Transform( -1.31134e-07, 0, 3.5, 0, 3, 0, -3, 0, -1.5299e-07, -115.552, 16.1023, 41.6595 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGBox19" type="CSGBox" parent="."]
+transform = Transform( -1.31134e-07, 0, 3.5, 0, 3, 0, -3, 0, -1.5299e-07, -110.597, 19.75, 27.892 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGBox20" type="CSGBox" parent="."]
+transform = Transform( -1.31134e-07, 0, 3.5, 0, 3, 0, -3, 0, -1.5299e-07, -145.519, 12.6499, 39.1282 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGBox21" type="CSGBox" parent="."]
+transform = Transform( -1.31134e-07, 0, 3.5, 0, 3, 0, -3, 0, -1.5299e-07, -117.814, 22.5858, 13.844 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGBox23" type="CSGBox" parent="."]
+transform = Transform( -1.31134e-07, 0, 3.5, 0, 3, 0, -3, 0, -1.5299e-07, -130.912, 26.5263, 16.5993 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGBox22" type="CSGBox" parent="."]
+transform = Transform( -1.74846e-07, 0, 10.3, 0, 0.5, 0, -4, 0, -4.50227e-07, -144.799, 29.0599, 26.8032 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
 }
 
 [node name="CSGCylinder1" type="CSGCylinder" parent="."]

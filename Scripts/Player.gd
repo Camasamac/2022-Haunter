@@ -1,14 +1,15 @@
 extends KinematicBody
 
 # Physics variables that will help for the player.
-var movementSpeed = 8.0 # How fast the player can move.
-var jumpStrength = 7.0 # How much force used to make player jump.
-var gravity = 10 # Gravity's strength.
+var movementSpeed = 10.0 # How fast the player can move.
+var jumpStrength = 13.0 # How much force used to make player jump.
+# ^ I thought of a gamemode of 'bunny mode' where there is a customised map for this mode with heigher ceilings and roofs (given that the jump strength is around 20-30). With this, likely jumpier enemies.
+var gravity = 20 # Gravity's strength.
 
 # cam look
 var minCamVerticalAngle = -90.0		# Limit camera view to straight down.
 var maxCamVerticalAngle = 90.0		# Limit camera view to straight up.
-var lookSensitivity = 0.5			# How fast camera moves. 'mouse sensitivity'. 
+var lookSensitivity = 1.2			# How fast camera moves. 'mouse sensitivity'. 
 
 # vectors
 var playerVelocity : Vector3 = Vector3() 	# Players Velocity
