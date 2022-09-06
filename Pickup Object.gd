@@ -10,3 +10,6 @@ func _on_Area_body_entered(body):
 		print(Global.Current_Score)
 		queue_free()
 	#Prints collided, adds 1 to the score, and then removes the object from the current scene.
+
+func _process(delta):
+	rotate_y(deg2rad(180*delta))

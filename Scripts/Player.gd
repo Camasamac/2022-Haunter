@@ -9,7 +9,7 @@ var gravity = 20 # Gravity's strength.
 # cam look
 var minCamVerticalAngle = -90.0		# Limit camera view to straight down.
 var maxCamVerticalAngle = 90.0		# Limit camera view to straight up.
-var lookSensitivity = 1.2			# How fast camera moves. 'mouse sensitivity'. 
+var lookSensitivity = 1			# How fast camera moves. 'mouse sensitivity'. 
 
 # vectors
 var playerVelocity : Vector3 = Vector3() 	# Players Velocity

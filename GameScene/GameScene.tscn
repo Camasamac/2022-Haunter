@@ -1,13 +1,18 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Textures/seamless carpet texture.jpg" type="Texture" id=1]
 [ext_resource path="res://Player Stuff/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://metallic-wall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Textures/drywall.jpg" type="Texture" id=4]
-[ext_resource path="res://Pickup Object.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Models/stack of money pickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://LampPost.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Textures/wood seamless.jpeg" type="Texture" id=7]
 
 [sub_resource type="QuadMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 7 )
+metallic = 1.0
 
 [sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 4 )
@@ -37,16 +42,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39518, 1.99787, -7.41092 )
 
 [node name="wall1" parent="." instance=ExtResource( 3 )]
 transform = Transform( 24.5, 0, 0, 0, 6, 0, 0, 0, 0.6, -0.0968955, 2.82329, -11.9428 )
+__meta__ = {
+"_editor_description_": "The resource for this wall is actually referenced from the wood seamless jpeg and has maximum albedo (hence it's dark nature)."
+}
 
 [node name="wall2" parent="." instance=ExtResource( 3 )]
 transform = Transform( -1.07093e-06, 0, -0.6, 0, 6, 0, 24.5, 0, -2.62268e-08, 11.9514, 2.83219, -0.287923 )
 mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
+material/0 = SubResource( 6 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="wall3" parent="." instance=ExtResource( 3 )]
 transform = Transform( -50, 0, 9.05975e-08, 0, 6, 0, -7.54979e-06, 0, -0.6, -12.7569, 2.83219, 11.9276 )
 mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
 
 [node name="wall4" parent="." instance=ExtResource( 3 )]
 transform = Transform( -7.78675e-07, 0, 0.6, 0, 6, 0, -17.814, 0, -2.62268e-08, -11.8055, 2.83219, -3.27376 )
@@ -121,7 +131,7 @@ transform = Transform( 9, 0, 0, 0, 6, 0, 0, 0, 0.6, 11.1166, 2.82329, 42.896 )
 transform = Transform( -1.04907e-06, 0, 0.6, 0, 14, 0, -24, 0, -2.62268e-08, -65.7156, 6.75209, 64.9232 )
 
 [node name="wall26" parent="." instance=ExtResource( 3 )]
-transform = Transform( -7.43094e-07, 0, -0.6, 0, 14, 0, 17, 0, -2.62268e-08, -31.953, 6.83015, 61.2526 )
+transform = Transform( -7.43094e-07, 0, -0.6, 0, 14, 0, 17, 0, -2.62268e-08, -31.8386, 6.83015, 61.2526 )
 
 [node name="wall27" parent="." instance=ExtResource( 3 )]
 transform = Transform( -35, 0, -9.05975e-08, 0, 14, 0, 5.28485e-06, 0, -0.6, -48.9691, 6.75209, 76.4376 )
@@ -209,6 +219,12 @@ transform = Transform( 50, 0, 0, 0, 42, 0, 0, 0, 0.6, -130.27, 20.7682, -3.11601
 
 [node name="wall55" parent="." instance=ExtResource( 3 )]
 transform = Transform( -50, 0, -5.24537e-08, 0, 42, 0, 4.37114e-06, 0, -0.6, -130.27, 20.7682, 56.0393 )
+
+[node name="wall56" parent="." instance=ExtResource( 3 )]
+transform = Transform( 3.2, 0, 0, 0, 6, 0, 0, 0, 0.6, -68.1714, 3.08069, 33.9319 )
+
+[node name="wall57" parent="." instance=ExtResource( 3 )]
+transform = Transform( 3.5, 0, 0, 0, 6, 0, 0, 0, 0.6, -76.7854, 3.08069, 33.9319 )
 
 [node name="Floor(corridor1)" type="MeshInstance" parent="."]
 transform = Transform( 1.614, 0, 0, 0, 1, 0, 0, 0, 0.353, -28.2186, 0.0145299, 8.74319 )
@@ -508,7 +524,7 @@ __meta__ = {
 }
 
 [node name="CSGBox9" type="CSGBox" parent="."]
-transform = Transform( -1.80441e-07, 0, 2.28, 0, 2.656, 0, -4.128, 0, -9.9662e-08, -82.653, 3.01613, 29.6859 )
+transform = Transform( -1.80441e-07, 0, 2.28, 0, 2.656, 0, -4.128, 0, -9.9662e-08, -82.653, 2.43395, 29.6859 )
 use_collision = true
 __meta__ = {
 "_editor_description_": "Big Crate that an enemy can hide behind. Peek a boo!"
@@ -585,7 +601,7 @@ __meta__ = {
 }
 
 [node name="CSGBox20" type="CSGBox" parent="."]
-transform = Transform( -1.31134e-07, 0, 3.5, 0, 3, 0, -3, 0, -1.5299e-07, -145.519, 12.6499, 39.1282 )
+transform = Transform( -1.74846e-07, 0, 4, 0, 3, 0, -4, 0, -1.74846e-07, -145.519, 12.6499, 39.1282 )
 use_collision = true
 __meta__ = {
 "_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
@@ -598,18 +614,39 @@ __meta__ = {
 "_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
 }
 
-[node name="CSGBox23" type="CSGBox" parent="."]
-transform = Transform( -1.31134e-07, 0, 3.5, 0, 3, 0, -3, 0, -1.5299e-07, -130.912, 26.5263, 16.5993 )
-use_collision = true
-__meta__ = {
-"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
-}
-
 [node name="CSGBox22" type="CSGBox" parent="."]
 transform = Transform( -1.74846e-07, 0, 10.3, 0, 0.5, 0, -4, 0, -4.50227e-07, -144.799, 29.0599, 26.8032 )
 use_collision = true
 __meta__ = {
 "_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGBox23" type="CSGBox" parent="."]
+transform = Transform( -2.18557e-07, 0, 3.4, 0, 2, 0, -5, 0, -1.48619e-07, -130.912, 27.0624, 16.3614 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "This is the basis of a tower that will have many different platforms in the forms of bookshelves to get to the end of the level."
+}
+
+[node name="CSGBox24" type="CSGBox" parent="."]
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1, -60.0804, 1.07539, 17.6614 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "Big Crate that an enemy can hide behind. Peek a boo!"
+}
+
+[node name="CSGBox25" type="CSGBox" parent="."]
+transform = Transform( 1.5, 0, 0, 0, 2.6, 0, 0, 0, 1, -61.6098, 2.35959, 1.53316 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "Big Crate that an enemy can hide behind. Peek a boo!"
+}
+
+[node name="CSGBox26" type="CSGBox" parent="."]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -36.1961, 3.81665, 57.4754 )
+use_collision = true
+__meta__ = {
+"_editor_description_": "Big Crate that an enemy can hide behind. Peek a boo!"
 }
 
 [node name="CSGCylinder1" type="CSGCylinder" parent="."]
@@ -620,8 +657,95 @@ __meta__ = {
 "_editor_description_": "This is ideally the dining table, with various things around it to interact with."
 }
 
-[node name="Pickup Object" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16679, 0.671806, -1.52429 )
+[node name="Lamp" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.163, 0, 0, 0, 1, 0, 0, 0, 0.164, 9.73955, 0.0257316, 9.22395 )
 
-[node name="Spatial" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.163, 0, 0, 0, 1, 0, 0, 0, 0.164, 6.15625, 0.0257316, 5.52895 )
+[node name="money" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -8.10215, 1.49209, 2.31277 )
+
+[node name="money2" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -30.71, 1.49209, -5.54057 )
+
+[node name="money3" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -24.9581, 1.49209, -2.91485 )
+
+[node name="money4" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -32.345, 1.49209, 32.7785 )
+
+[node name="money5" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -40.2061, 1.49209, 28.6008 )
+
+[node name="money6" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -7.92747, 1.49209, 32.0252 )
+
+[node name="money7" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -11.1213, 1.49209, 49.9366 )
+
+[node name="money8" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0653679, 2.97948, 68.8272 )
+
+[node name="money9" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -54.6431, 1.49209, 69.9302 )
+
+[node name="money10" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -59.8817, 1.49209, 58.1966 )
+
+[node name="money11" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -57.5129, 1.49209, 64.0928 )
+
+[node name="money12" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -61.3141, 7.5518, 21.3485 )
+
+[node name="money13" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -58.4147, 7.5518, 21.3485 )
+
+[node name="money14" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -72.7814, 1.49209, -4.20025 )
+
+[node name="money15" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -72.7814, 1.49209, -10.3448 )
+
+[node name="money16" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -72.7814, 1.49209, -16.546 )
+
+[node name="money17" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -76.0086, 1.49209, 47.7117 )
+
+[node name="money18" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -70.6038, 1.49209, 44.4558 )
+
+[node name="money19" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -119.541, 4.32877, 9.54219 )
+
+[node name="money20" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -130.013, 8.18858, 2.51024 )
+
+[node name="money21" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -141.87, 10.5149, 10.3896 )
+
+[node name="money22" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -148.729, 15.2313, 23.2337 )
+
+[node name="money23" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -145.509, 17.4678, 38.9055 )
+
+[node name="money24" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -115.932, 20.8016, 41.7418 )
+
+[node name="money25" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -111.05, 24.2989, 28.1968 )
+
+[node name="money26" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -117.828, 27.7442, 13.6824 )
+
+[node name="money27" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -130.838, 32.439, 16.283 )
+
+[node name="money28" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -22.9285, 1.49209, 46.8768 )
+
+[node name="money29" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 3.96319, 2.88654, 66.2812 )
+
+[node name="money30" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -20.2587, 1.45946, 60.3742 )
