@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Textures/seamless carpet texture.jpg" type="Texture" id=1]
 [ext_resource path="res://Player Stuff/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://metallic-wall.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Textures/drywall.jpg" type="Texture" id=4]
+[ext_resource path="res://GameScene/Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Models/stack of money pickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://LampPost.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Textures/wood seamless.jpeg" type="Texture" id=7]
@@ -14,9 +14,25 @@
 albedo_texture = ExtResource( 7 )
 metallic = 1.0
 
-[sub_resource type="SpatialMaterial" id=5]
-albedo_texture = ExtResource( 4 )
-uv1_scale = Vector3( 5, 1, 1 )
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 7 )
+metallic = 1.0
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_texture = ExtResource( 7 )
+metallic = 1.0
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 7 )
+metallic = 1.0
+
+[sub_resource type="NavigationMesh" id=10]
+vertices = PoolVector3Array( -74.852, 2.92373, -15.7788, -71.852, 2.92373, -17.7788, -71.852, 2.92373, -19.7788, -77.852, 2.92373, -19.7788, -77.852, 2.92373, -15.7788, -74.852, 2.92373, -10.7788, -71.852, 2.92373, -11.7788, -71.852, 2.92373, -14.7788, -74.852, 2.92373, -15.7788, -77.852, 2.92373, -15.7788, -71.852, 2.92373, -5.77879, -71.852, 2.92373, -2.77879, -70.852, 2.92373, -1.77879, -63.852, 2.92373, -1.77879, -70.852, 2.92373, -9.77879, -62.852, 2.92373, 6.22121, -51.852, 2.92373, 6.22121, -51.852, 2.92373, 0.221207, -63.852, 2.92373, -1.77879, -71.852, 2.92373, -14.7788, -71.852, 2.92373, -11.7788, -70.852, 2.92373, -9.77879, -50.852, 2.92373, -12.7788, -50.852, 2.92373, -19.7788, -61.852, 2.92373, -19.7788, -73.852, 2.92373, -8.77879, -77.852, 2.92373, -4.77879, -74.852, 2.92373, -4.77879, -71.852, 2.92373, -5.77879, -70.852, 2.92373, -9.77879, -74.852, 2.92373, -10.7788, -77.852, 2.92373, -15.7788, -77.852, 2.92373, -4.77879, -73.852, 2.92373, -8.77879, -51.852, 2.92373, 0.221207, -50.852, 2.92373, -5.77879, -50.852, 2.92373, -12.7788, -61.852, 2.92373, -19.7788, -71.852, 2.92373, -19.7788, -70.852, 2.92373, -9.77879, -63.852, 2.92373, -1.77879, -51.852, 2.92373, 0.221207, -50.852, 2.92373, -12.7788, -71.852, 2.92373, -17.7788, -71.852, 2.92373, -14.7788, -70.852, 2.92373, -9.77879, -71.852, 2.92373, -19.7788, -71.852, 2.92373, -17.7788, -70.852, 2.92373, -9.77879, 8.14799, 2.92373, 12.2212, 9.14799, 2.92373, 11.2212, 8.14799, 2.92373, 8.22121, -1.85201, 2.92373, 12.2212, 0.147995, 2.92373, -12.7788, -11.852, 2.92373, -12.7788, -11.852, 2.92373, -0.778793, -1.85201, 2.92373, 12.2212, 8.14799, 2.92373, 8.22121, 13.148, 2.92373, -2.77879, 11.148, 2.92373, 8.22121, 13.148, 2.92373, 8.22121, 13.148, 2.92373, -2.77879, 8.14799, 2.92373, 8.22121, 11.148, 2.92373, 8.22121, 13.148, 2.92373, -2.77879, 13.148, 2.92373, -2.77879, 13.148, 2.92373, -12.7788, 6.14799, 2.92373, -12.7788, -11.852, 2.92373, 5.22121, -11.852, 2.92373, 12.2212, -1.85201, 2.92373, 12.2212, 13.148, 2.92373, -2.77879, 6.14799, 2.92373, -12.7788, 0.147995, 2.92373, -12.7788, -11.852, 2.92373, -0.778793, -11.852, 2.92373, 5.22121, -1.85201, 2.92373, 12.2212, -28.852, 2.92373, -3.77879, -27.852, 2.92373, -2.77879, -26.852, 2.92373, -4.77879, -28.852, 2.92373, -6.77879, -23.852, 2.92373, -4.77879, -22.852, 2.92373, -1.77879, -21.852, 2.92373, -0.778793, -21.852, 2.92373, -7.77879, -34.852, 2.92373, -4.77879, -32.852, 2.92373, -4.77879, -31.852, 2.92373, -6.77879, -34.852, 2.92373, -7.77879, -26.852, 2.92373, -4.77879, -23.852, 2.92373, -4.77879, -21.852, 2.92373, -7.77879, -28.852, 2.92373, -7.77879, -28.852, 2.92373, -6.77879, -28.852, 2.92373, -7.77879, -34.852, 2.92373, -7.77879, -31.852, 2.92373, -6.77879, -28.852, 2.92373, -6.77879, -74.852, 2.92373, -4.77879, -77.852, 2.92373, -4.77879, -77.852, 2.92373, -1.77879, -70.852, 2.92373, -1.77879, -71.852, 2.92373, -2.77879, -21.852, 2.92373, -0.778793, -22.852, 2.92373, -1.77879, -24.852, 2.92373, -0.778793, -28.852, 2.92373, 5.22121, -21.852, 2.92373, 5.22121, -27.852, 2.92373, -2.77879, -28.852, 2.92373, -3.77879, -32.852, 2.92373, -4.77879, -27.852, 2.92373, -2.77879, -32.852, 2.92373, -4.77879, -34.852, 2.92373, -4.77879, -34.852, 2.92373, 5.22121, -28.852, 2.92373, 5.22121, -24.852, 2.92373, -0.778793, -142.852, 2.92373, -2.77879, -154.852, 2.92373, -2.77879, -154.852, 2.92373, 4.22121, -154.852, 2.92373, 48.2212, -154.852, 2.92373, 56.2212, -142.852, 2.92373, 56.2212, -106.852, 2.92373, 8.22121, -106.852, 2.92373, -2.77879, -118.852, 2.92373, -2.77879, -118.852, 2.92373, 56.2212, -106.852, 2.92373, 56.2212, -106.852, 2.92373, 44.2212, -142.852, 2.92373, -2.77879, -154.852, 2.92373, 4.22121, -154.852, 2.92373, 11.2212, -154.852, 2.92373, 41.2212, -154.852, 2.92373, 48.2212, -142.852, 2.92373, 56.2212, -142.852, 2.92373, -2.77879, -154.852, 2.92373, 11.2212, -154.852, 2.92373, 18.2212, -105.852, 2.92373, 18.2212, -106.852, 2.92373, 8.22121, -118.852, 2.92373, -2.77879, -130.852, 2.92373, -2.77879, -154.852, 2.92373, 33.2212, -154.852, 2.92373, 41.2212, -142.852, 2.92373, 56.2212, -106.852, 2.92373, 44.2212, -105.852, 2.92373, 33.2212, -105.852, 2.92373, 18.2212, -130.852, 2.92373, 56.2212, -118.852, 2.92373, 56.2212, -106.852, 2.92373, 44.2212, -142.852, 2.92373, -2.77879, -154.852, 2.92373, 18.2212, -154.852, 2.92373, 26.2212, -130.852, 2.92373, -2.77879, -154.852, 2.92373, 26.2212, -154.852, 2.92373, 33.2212, -142.852, 2.92373, 56.2212, -142.852, 2.92373, 56.2212, -130.852, 2.92373, 56.2212, -106.852, 2.92373, 44.2212, -105.852, 2.92373, 18.2212, -130.852, 2.92373, -2.77879, -154.852, 2.92373, 26.2212, -56.852, 2.92373, 70.2212, -54.852, 2.92373, 68.2212, -55.852, 2.92373, 66.2212, -59.852, 2.92373, 65.2212, -74.852, 2.92373, 49.2212, -70.852, 2.92373, 49.2212, -70.852, 2.92373, 46.2212, -72.852, 2.92373, 45.2212, -74.852, 2.92373, 46.2212, -58.852, 2.92373, 56.2212, -51.852, 2.92373, 52.2212, -51.852, 2.92373, 40.2212, -62.852, 2.92373, 42.2212, -62.852, 2.92373, 52.2212, -61.852, 2.92373, 57.2212, -64.852, 2.92373, 53.2212, -64.852, 2.92373, 64.2212, -61.852, 2.92373, 59.2212, -61.852, 2.92373, 57.2212, -62.852, 2.92373, 52.2212, -74.852, 2.92373, 46.2212, -72.852, 2.92373, 45.2212, -71.852, 2.92373, 43.2212, -71.852, 2.92373, 43.2212, -67.852, 2.92373, 44.2212, -66.852, 2.92373, 43.2212, -66.852, 2.92373, 34.2212, -57.852, 2.92373, 62.2212, -58.852, 2.92373, 60.2212, -61.852, 2.92373, 59.2212, -64.852, 2.92373, 64.2212, -59.852, 2.92373, 65.2212, -63.852, 2.92373, 33.2212, -63.852, 2.92373, 18.2212, -70.852, 2.92373, 18.2212, -51.852, 2.92373, 6.22121, -62.852, 2.92373, 6.22121, -62.852, 2.92373, 13.2212, -51.852, 2.92373, 17.2212, -77.852, 2.92373, 46.2212, -74.852, 2.92373, 46.2212, -71.852, 2.92373, 43.2212, -66.852, 2.92373, 34.2212, -77.852, 2.92373, 34.2212, -53.852, 2.92373, 76.2212, -53.852, 2.92373, 71.2212, -56.852, 2.92373, 70.2212, -57.852, 2.92373, 58.2212, -49.852, 2.92373, 53.2212, -51.852, 2.92373, 52.2212, -58.852, 2.92373, 56.2212, -63.852, 2.92373, 18.2212, -63.852, 2.92373, 33.2212, -51.852, 2.92373, 29.2212, -51.852, 2.92373, 17.2212, -62.852, 2.92373, 13.2212, -64.852, 2.92373, 64.2212, -64.852, 2.92373, 76.2212, -53.852, 2.92373, 76.2212, -56.852, 2.92373, 70.2212, -59.852, 2.92373, 65.2212, -77.852, 2.92373, 34.2212, -66.852, 2.92373, 34.2212, -63.852, 2.92373, 33.2212, -70.852, 2.92373, 18.2212, -76.852, 2.92373, 18.2212, -63.852, 2.92373, 33.2212, -62.852, 2.92373, 42.2212, -51.852, 2.92373, 40.2212, -51.852, 2.92373, 29.2212, 9.14799, 2.92373, 11.2212, 8.14799, 2.92373, 12.2212, 13.148, 2.92373, 12.2212, 13.148, 2.92373, 12.2212, 13.148, 2.92373, 8.22121, 11.148, 2.92373, 8.22121, 9.14799, 2.92373, 11.2212, -90.852, 2.92373, 10.2212, -99.852, 2.92373, 10.2212, -99.852, 2.92373, 17.2212, -89.852, 2.92373, 18.2212, -89.852, 2.92373, 18.2212, -91.852, 2.92373, 33.2212, -84.852, 2.92373, 33.2212, -83.852, 2.92373, 18.2212, -89.852, 2.92373, 18.2212, -99.852, 2.92373, 17.2212, -105.852, 2.92373, 18.2212, -98.852, 2.92373, 33.2212, -91.852, 2.92373, 33.2212, -105.852, 2.92373, 18.2212, -105.852, 2.92373, 33.2212, -98.852, 2.92373, 33.2212, -84.852, 2.92373, 33.2212, -77.852, 2.92373, 34.2212, -76.852, 2.92373, 18.2212, -83.852, 2.92373, 18.2212, -29.852, 2.92373, 32.2212, -31.852, 2.92373, 34.2212, -31.852, 2.92373, 36.2212, -20.852, 2.92373, 36.2212, -20.852, 2.92373, 24.2212, -43.852, 2.92373, 20.2212, -43.852, 2.92373, 28.2212, -42.852, 2.92373, 28.2212, -37.852, 2.92373, 28.2212, -32.852, 2.92373, 31.2212, -29.852, 2.92373, 32.2212, -32.852, 2.92373, 12.2212, -43.852, 2.92373, 12.2212, -43.852, 2.92373, 20.2212, -43.852, 2.92373, 20.2212, -42.852, 2.92373, 28.2212, -37.852, 2.92373, 28.2212, -32.852, 2.92373, 12.2212, -43.852, 2.92373, 20.2212, -37.852, 2.92373, 28.2212, -29.852, 2.92373, 32.2212, -20.852, 2.92373, 24.2212, -20.852, 2.92373, 12.2212, -6.85201, 2.92373, 33.2212, -10.852, 2.92373, 32.2212, -10.852, 2.92373, 36.2212, -2.85201, 2.92373, 36.2212, -2.85201, 2.92373, 17.2212, -10.852, 2.92373, 17.2212, -10.852, 2.92373, 24.2212, -5.85201, 2.92373, 31.2212, -6.85201, 2.92373, 33.2212, -2.85201, 2.92373, 36.2212, 6.14799, 2.92373, 36.2212, 6.14799, 2.92373, 26.2212, -10.852, 2.92373, 24.2212, -10.852, 2.92373, 31.2212, -5.85201, 2.92373, 31.2212, 6.14799, 2.92373, 26.2212, 6.14799, 2.92373, 17.2212, -2.85201, 2.92373, 17.2212, -41.852, 2.92373, 30.2212, -42.852, 2.92373, 28.2212, -43.852, 2.92373, 28.2212, -43.852, 2.92373, 36.2212, -31.852, 2.92373, 36.2212, -31.852, 2.92373, 34.2212, -34.852, 2.92373, 33.2212, -34.852, 2.92373, 33.2212, -32.852, 2.92373, 31.2212, -37.852, 2.92373, 28.2212, -38.852, 2.92373, 30.2212, -34.852, 2.92373, 33.2212, -38.852, 2.92373, 30.2212, -41.852, 2.92373, 30.2212, -43.852, 2.92373, 36.2212, -31.852, 2.92373, 36.2212, -70.852, 2.92373, 46.2212, -70.852, 2.92373, 49.2212, -66.852, 2.92373, 49.2212, -67.852, 2.92373, 44.2212, -67.852, 2.92373, 44.2212, -66.852, 2.92373, 49.2212, -66.852, 2.92373, 43.2212, -18.852, 2.92373, 59.2212, -17.852, 2.92373, 61.2212, -16.852, 2.92373, 61.2212, -11.852, 2.92373, 51.2212, -25.852, 2.92373, 61.2212, -22.852, 2.92373, 61.2212, -21.852, 2.92373, 59.2212, -25.852, 2.92373, 54.2212, -25.852, 2.92373, 43.2212, -25.852, 2.92373, 46.2212, -20.852, 2.92373, 46.2212, -18.852, 2.92373, 43.2212, -25.852, 2.92373, 54.2212, -21.852, 2.92373, 59.2212, -18.852, 2.92373, 59.2212, -11.852, 2.92373, 51.2212, -13.852, 2.92373, 49.2212, -21.852, 2.92373, 48.2212, -18.852, 2.92373, 43.2212, -20.852, 2.92373, 46.2212, -21.852, 2.92373, 48.2212, -13.852, 2.92373, 49.2212, -10.852, 2.92373, 48.2212, -10.852, 2.92373, 43.2212, -21.852, 2.92373, 48.2212, -25.852, 2.92373, 47.2212, -25.852, 2.92373, 54.2212, -10.852, 2.92373, 43.2212, -10.852, 2.92373, 48.2212, -8.85201, 2.92373, 50.2212, 1.14799, 2.92373, 43.2212, 14.148, 2.92373, 52.2212, 14.148, 2.92373, 43.2212, 7.14799, 2.92373, 43.2212, -8.85201, 2.92373, 50.2212, -16.852, 2.92373, 61.2212, -2.85201, 2.92373, 68.2212, 4.14799, 2.92373, 64.2212, 14.148, 2.92373, 52.2212, 1.14799, 2.92373, 43.2212, -8.85201, 2.92373, 50.2212, -11.852, 2.92373, 51.2212, -16.852, 2.92373, 61.2212, 4.14799, 2.92373, 64.2212, 14.148, 2.92373, 62.2212, 14.148, 2.92373, 52.2212, 14.148, 2.92373, 52.2212, 7.14799, 2.92373, 43.2212, 1.14799, 2.92373, 43.2212, -57.852, 2.92373, 58.2212, -58.852, 2.92373, 60.2212, -57.852, 2.92373, 62.2212, -54.852, 2.92373, 63.2212, -49.852, 2.92373, 53.2212, -54.852, 2.92373, 63.2212, -55.852, 2.92373, 66.2212, -54.852, 2.92373, 68.2212, -51.852, 2.92373, 69.2212, -49.852, 2.92373, 53.2212, -31.852, 2.92373, 64.2212, -31.852, 2.92373, 53.2212, -40.852, 2.92373, 53.2212, -42.852, 2.92373, 76.2212, -31.852, 2.92373, 76.2212, -31.852, 2.92373, 64.2212, -40.852, 2.92373, 53.2212, -49.852, 2.92373, 53.2212, -51.852, 2.92373, 69.2212, -51.852, 2.92373, 69.2212, -53.852, 2.92373, 71.2212, -53.852, 2.92373, 76.2212, -42.852, 2.92373, 76.2212, -22.852, 2.92373, 61.2212, -25.852, 2.92373, 61.2212, -25.852, 2.92373, 68.2212, 14.148, 2.92373, 62.2212, 4.14799, 2.92373, 64.2212, 6.14799, 2.92373, 65.2212, 14.148, 2.92373, 69.2212, 14.148, 2.92373, 62.2212, 6.14799, 2.92373, 65.2212, 14.148, 2.92373, 69.2212, 6.14799, 2.92373, 65.2212, 5.14799, 2.92373, 68.2212, 4.14799, 2.92373, 76.2212, 14.148, 2.92373, 76.2212, -17.852, 2.92373, 61.2212, -22.852, 2.92373, 61.2212, -25.852, 2.92373, 68.2212, -16.852, 2.92373, 61.2212, -17.852, 2.92373, 61.2212, -25.852, 2.92373, 68.2212, -15.852, 2.92373, 76.2212, -5.85201, 2.92373, 76.2212, -2.85201, 2.92373, 68.2212, -5.85201, 2.92373, 76.2212, -1.85201, 2.92373, 70.2212, -2.85201, 2.92373, 68.2212, -25.852, 2.92373, 68.2212, -25.852, 2.92373, 76.2212, -15.852, 2.92373, 76.2212, 4.14799, 2.92373, 76.2212, 5.14799, 2.92373, 68.2212, -1.85201, 2.92373, 70.2212, -5.85201, 2.92373, 76.2212 )
+polygons = [ PoolIntArray( 1, 0, 2 ), PoolIntArray( 2, 0, 4 ), PoolIntArray( 2, 4, 3 ), PoolIntArray( 6, 5, 7 ), PoolIntArray( 7, 5, 8 ), PoolIntArray( 8, 5, 9 ), PoolIntArray( 11, 10, 12 ), PoolIntArray( 12, 10, 14 ), PoolIntArray( 12, 14, 13 ), PoolIntArray( 16, 15, 17 ), PoolIntArray( 17, 15, 18 ), PoolIntArray( 20, 19, 21 ), PoolIntArray( 24, 23, 22 ), PoolIntArray( 29, 28, 25 ), PoolIntArray( 25, 28, 27 ), PoolIntArray( 25, 27, 26 ), PoolIntArray( 33, 32, 30 ), PoolIntArray( 30, 32, 31 ), PoolIntArray( 36, 35, 34 ), PoolIntArray( 38, 37, 39 ), PoolIntArray( 39, 37, 40 ), PoolIntArray( 40, 37, 42 ), PoolIntArray( 40, 42, 41 ), PoolIntArray( 45, 44, 43 ), PoolIntArray( 48, 47, 46 ), PoolIntArray( 50, 49, 51 ), PoolIntArray( 51, 49, 52 ), PoolIntArray( 54, 53, 55 ), PoolIntArray( 55, 53, 58 ), PoolIntArray( 55, 58, 57 ), PoolIntArray( 55, 57, 56 ), PoolIntArray( 61, 60, 59 ), PoolIntArray( 64, 63, 62 ), PoolIntArray( 67, 66, 65 ), PoolIntArray( 70, 69, 68 ), PoolIntArray( 72, 71, 73 ), PoolIntArray( 75, 74, 76 ), PoolIntArray( 78, 77, 79 ), PoolIntArray( 79, 77, 80 ), PoolIntArray( 82, 81, 83 ), PoolIntArray( 83, 81, 84 ), PoolIntArray( 86, 85, 87 ), PoolIntArray( 87, 85, 88 ), PoolIntArray( 93, 92, 89 ), PoolIntArray( 89, 92, 90 ), PoolIntArray( 90, 92, 91 ), PoolIntArray( 97, 96, 94 ), PoolIntArray( 94, 96, 95 ), PoolIntArray( 102, 101, 98 ), PoolIntArray( 98, 101, 99 ), PoolIntArray( 99, 101, 100 ), PoolIntArray( 104, 103, 105 ), PoolIntArray( 105, 103, 107 ), PoolIntArray( 105, 107, 106 ), PoolIntArray( 110, 109, 108 ), PoolIntArray( 112, 111, 113 ), PoolIntArray( 113, 111, 116 ), PoolIntArray( 113, 116, 115 ), PoolIntArray( 113, 115, 114 ), PoolIntArray( 119, 118, 117 ), PoolIntArray( 122, 121, 120 ), PoolIntArray( 125, 124, 123 ), PoolIntArray( 128, 127, 126 ), PoolIntArray( 131, 130, 129 ), PoolIntArray( 134, 133, 132 ), PoolIntArray( 137, 136, 135 ), PoolIntArray( 139, 138, 140 ), PoolIntArray( 140, 138, 141 ), PoolIntArray( 144, 143, 142 ), PoolIntArray( 145, 147, 146 ), PoolIntArray( 150, 149, 148 ), PoolIntArray( 152, 151, 153 ), PoolIntArray( 153, 151, 154 ), PoolIntArray( 157, 156, 155 ), PoolIntArray( 159, 158, 160 ), PoolIntArray( 160, 158, 161 ), PoolIntArray( 161, 158, 163 ), PoolIntArray( 161, 163, 162 ), PoolIntArray( 165, 164, 166 ), PoolIntArray( 166, 164, 167 ), PoolIntArray( 171, 170, 172 ), PoolIntArray( 172, 170, 169 ), PoolIntArray( 172, 169, 168 ), PoolIntArray( 178, 177, 173 ), PoolIntArray( 173, 177, 174 ), PoolIntArray( 174, 177, 176 ), PoolIntArray( 174, 176, 175 ), PoolIntArray( 183, 182, 179 ), PoolIntArray( 179, 182, 181 ), PoolIntArray( 179, 181, 180 ), PoolIntArray( 186, 185, 184 ), PoolIntArray( 188, 187, 189 ), PoolIntArray( 189, 187, 190 ), PoolIntArray( 192, 191, 193 ), PoolIntArray( 193, 191, 195 ), PoolIntArray( 193, 195, 194 ), PoolIntArray( 198, 197, 196 ), PoolIntArray( 200, 199, 201 ), PoolIntArray( 201, 199, 202 ), PoolIntArray( 204, 203, 205 ), PoolIntArray( 205, 203, 207 ), PoolIntArray( 205, 207, 206 ), PoolIntArray( 210, 209, 208 ), PoolIntArray( 214, 213, 211 ), PoolIntArray( 211, 213, 212 ), PoolIntArray( 219, 218, 215 ), PoolIntArray( 215, 218, 217 ), PoolIntArray( 215, 217, 216 ), PoolIntArray( 224, 223, 220 ), PoolIntArray( 220, 223, 221 ), PoolIntArray( 221, 223, 222 ), PoolIntArray( 226, 225, 227 ), PoolIntArray( 227, 225, 228 ), PoolIntArray( 228, 225, 229 ), PoolIntArray( 231, 230, 232 ), PoolIntArray( 232, 230, 233 ), PoolIntArray( 236, 235, 234 ), PoolIntArray( 238, 237, 239 ), PoolIntArray( 239, 237, 240 ), PoolIntArray( 242, 241, 243 ), PoolIntArray( 243, 241, 244 ), PoolIntArray( 248, 247, 245 ), PoolIntArray( 245, 247, 246 ), PoolIntArray( 250, 249, 251 ), PoolIntArray( 251, 249, 252 ), PoolIntArray( 252, 249, 253 ), PoolIntArray( 256, 255, 254 ), PoolIntArray( 260, 259, 257 ), PoolIntArray( 257, 259, 258 ), PoolIntArray( 262, 261, 263 ), PoolIntArray( 263, 261, 264 ), PoolIntArray( 264, 261, 265 ), PoolIntArray( 268, 267, 266 ), PoolIntArray( 270, 269, 271 ), PoolIntArray( 274, 273, 272 ), PoolIntArray( 277, 276, 275 ), PoolIntArray( 280, 279, 281 ), PoolIntArray( 281, 279, 278 ), PoolIntArray( 281, 278, 282 ), PoolIntArray( 282, 278, 283 ), PoolIntArray( 285, 284, 286 ), PoolIntArray( 286, 284, 287 ), PoolIntArray( 290, 289, 288 ), PoolIntArray( 292, 291, 293 ), PoolIntArray( 293, 291, 294 ), PoolIntArray( 294, 291, 295 ), PoolIntArray( 297, 296, 298 ), PoolIntArray( 298, 296, 301 ), PoolIntArray( 298, 301, 299 ), PoolIntArray( 299, 301, 300 ), PoolIntArray( 303, 302, 304 ), PoolIntArray( 304, 302, 305 ), PoolIntArray( 308, 307, 306 ), PoolIntArray( 312, 311, 309 ), PoolIntArray( 309, 311, 310 ), PoolIntArray( 314, 313, 315 ), PoolIntArray( 315, 313, 316 ), PoolIntArray( 316, 313, 317 ), PoolIntArray( 319, 318, 320 ), PoolIntArray( 320, 318, 321 ), PoolIntArray( 324, 323, 322 ), PoolIntArray( 326, 325, 327 ), PoolIntArray( 327, 325, 328 ), PoolIntArray( 330, 329, 331 ), PoolIntArray( 331, 329, 332 ), PoolIntArray( 334, 333, 335 ), PoolIntArray( 335, 333, 336 ), PoolIntArray( 338, 337, 339 ), PoolIntArray( 339, 337, 342 ), PoolIntArray( 339, 342, 341 ), PoolIntArray( 339, 341, 340 ), PoolIntArray( 344, 343, 345 ), PoolIntArray( 345, 343, 346 ), PoolIntArray( 346, 343, 347 ), PoolIntArray( 347, 343, 348 ), PoolIntArray( 351, 350, 349 ), PoolIntArray( 353, 352, 354 ), PoolIntArray( 354, 352, 355 ), PoolIntArray( 358, 357, 356 ), PoolIntArray( 361, 360, 362 ), PoolIntArray( 362, 360, 359 ), PoolIntArray( 362, 359, 364 ), PoolIntArray( 362, 364, 363 ), PoolIntArray( 367, 366, 365 ), PoolIntArray( 370, 369, 368 ), PoolIntArray( 373, 372, 371 ), PoolIntArray( 375, 374, 376 ), PoolIntArray( 376, 374, 377 ), PoolIntArray( 377, 374, 378 ), PoolIntArray( 380, 379, 381 ), PoolIntArray( 381, 379, 382 ), PoolIntArray( 382, 379, 383 ), PoolIntArray( 386, 385, 384 ), PoolIntArray( 388, 387, 389 ), PoolIntArray( 389, 387, 392 ), PoolIntArray( 389, 392, 390 ), PoolIntArray( 390, 392, 391 ), PoolIntArray( 394, 393, 395 ), PoolIntArray( 395, 393, 396 ), PoolIntArray( 399, 398, 397 ), PoolIntArray( 402, 401, 400 ), PoolIntArray( 405, 404, 403 ), PoolIntArray( 407, 406, 408 ), PoolIntArray( 408, 406, 410 ), PoolIntArray( 408, 410, 409 ), PoolIntArray( 413, 412, 411 ), PoolIntArray( 415, 414, 416 ), PoolIntArray( 416, 414, 417 ), PoolIntArray( 417, 414, 418 ), PoolIntArray( 418, 414, 419 ), PoolIntArray( 422, 421, 420 ), PoolIntArray( 425, 424, 423 ), PoolIntArray( 427, 426, 428 ), PoolIntArray( 428, 426, 429 ) ]
+cell_size = 1.0
+cell_height = 1.5
+agent_height = 0.0
+agent_radius = 1.0
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 20, 20 )
@@ -61,17 +77,17 @@ mesh = SubResource( 4 )
 [node name="wall4" parent="." instance=ExtResource( 3 )]
 transform = Transform( -7.78675e-07, 0, 0.6, 0, 6, 0, -17.814, 0, -2.62268e-08, -11.8055, 2.83219, -3.27376 )
 mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
+material/0 = SubResource( 7 )
 
 [node name="wall5 (First Corridor)" parent="." instance=ExtResource( 3 )]
 transform = Transform( 10, 0, 0, 0, 6, 0, 0, 0, 0.6, -16.7905, 2.83219, 5.63189 )
 mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
+material/0 = SubResource( 8 )
 
 [node name="wall6(First Corridor)2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 10, 0, 0, 0, 6, 0, 0, 0, 0.6, -39.3437, 2.83219, 5.63189 )
 mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
+material/0 = SubResource( 9 )
 
 [node name="wall7" parent="." instance=ExtResource( 3 )]
 transform = Transform( 13, 0, 0, 0, 6, 0, 0, 0, 0.6, -28.0864, 2.82329, -8.10598 )
@@ -226,6 +242,254 @@ transform = Transform( 3.2, 0, 0, 0, 6, 0, 0, 0, 0.6, -68.1714, 3.08069, 33.9319
 [node name="wall57" parent="." instance=ExtResource( 3 )]
 transform = Transform( 3.5, 0, 0, 0, 6, 0, 0, 0, 0.6, -76.7854, 3.08069, 33.9319 )
 
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="Enemy" parent="Navigation" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.931, 2.57801, 18.9772 )
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 10 )
+
+[node name="Floor2" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1.3, 0, 0, 0, 1, 0, 0, 0, 1.3, 0.467607, -0.00526834, -0.334311 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor2/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor3 (1Corridor Room)" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, -28.1025, -0.00526834, -1.38833 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor3 (1Corridor Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor3 (1Corridor Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor4 (2nd Big Room)" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1.215, 0, 0, 0, 1, 0, 0, 0, 1.213, -32.6176, -0.00526262, 24.1262 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor4 (2nd Big Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor4 (2nd Big Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor6 (Kitchen)" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 2.1, 0, 0, 0, 1, 0, 0, 0, 1.7, -5.41443, -0.00526262, 59.7363 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor6 (Kitchen)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor6 (Kitchen)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor8 (1 Secret Room)" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 0.9, 0, 0, 0, 1, 0, 0, 0, 1, -2.25099, -0.00526834, 26.4569 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor8 (1 Secret Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor8 (1 Secret Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor10 (deteriorating room)" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1.7, 0, 0, 0, 1, 0, 0, 0, 1.2, -48.7831, -0.00526834, 64.7856 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 3 )
+__meta__ = {
+"_editor_description_": "This room may be given a taller ceiling for the experimentation of a platforming area, as it would be bad to have a platforming area in level 1 and assume people know how to do it already."
+}
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor10 (deteriorating room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor10 (deteriorating room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor11 (corridor2)" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 0.6, 0, 0, 0, 1, 0, 0, 0, 2.7, -56.8952, -0.00526834, 26.1421 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor11 (corridor2)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor11 (corridor2)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor12 (look out! room)" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Floor11 (corridor2)"]
+transform = Transform( 2.33333, 0, 0, 0, 1, 0, 0, 0, 0.37037, -13.1388, 0, -13.6744 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor11 (corridor2)/Floor12 (look out! room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor11 (corridor2)/Floor12 (look out! room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor13 (corridor filled with doors)" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 2.2, 0, 0, 0, 1, 0, 0, 0, 0.8, -84.521, -0.00526834, 25.8842 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor13 (corridor filled with doors)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor13 (corridor filled with doors)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor14 (2 Secret Room)" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, -72.5836, -0.00526834, 41.6287 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor14 (2 Secret Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor14 (2 Secret Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor15 (3 Secret Room)" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.4, -95.5622, -0.00526834, 13.9914 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor15 (3 Secret Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor15 (3 Secret Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Floor16 (Arena Room)" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 3, -130.852, -0.00526834, 26.2788 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor16 (Arena Room)"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor16 (Arena Room)/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+}
+
+[node name="Lamp" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 6 )]
+transform = Transform( 0.163, 0, 0, 0, 1, 0, 0, 0, 0.164, 9.73955, 0.0257316, 9.22395 )
+
+[node name="money2" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -30.71, 1.49209, -5.54057 )
+
+[node name="money3" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -24.9581, 1.49209, -2.91485 )
+
+[node name="money4" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -32.345, 1.49209, 32.7785 )
+
+[node name="money5" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -40.2061, 1.49209, 28.6008 )
+
+[node name="money6" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -7.92747, 1.49209, 32.0252 )
+
+[node name="money7" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -11.1213, 1.49209, 49.9366 )
+
+[node name="money8" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0653679, 2.97948, 68.8272 )
+
+[node name="money9" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -54.6431, 1.49209, 69.9302 )
+
+[node name="money10" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -59.8817, 1.49209, 58.1966 )
+
+[node name="money11" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -57.5129, 1.49209, 64.0928 )
+
+[node name="money14" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -72.7814, 1.49209, -4.20025 )
+
+[node name="money15" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -72.7814, 1.49209, -10.3448 )
+
+[node name="money16" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -72.7814, 1.49209, -16.546 )
+
+[node name="money17" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -76.0086, 1.49209, 47.7117 )
+
+[node name="money28" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -22.9285, 1.49209, 46.8768 )
+
+[node name="money30" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -20.2587, 1.45946, 60.3742 )
+
+[node name="money29" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 3.96319, 2.88654, 66.2812 )
+
+[node name="money18" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -70.6038, 1.49209, 44.4558 )
+
 [node name="Floor(corridor1)" type="MeshInstance" parent="."]
 transform = Transform( 1.614, 0, 0, 0, 1, 0, 0, 0, 0.353, -28.2186, 0.0145299, 8.74319 )
 mesh = SubResource( 1 )
@@ -234,48 +498,6 @@ material/0 = SubResource( 3 )
 [node name="StaticBody" type="StaticBody" parent="Floor(corridor1)"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor(corridor1)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
-[node name="Floor3 (1Corridor Room)" type="MeshInstance" parent="."]
-transform = Transform( 0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, -28.1025, -0.00526834, -1.38833 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor3 (1Corridor Room)"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor3 (1Corridor Room)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
-[node name="Floor2" type="MeshInstance" parent="."]
-transform = Transform( 1.3, 0, 0, 0, 1, 0, 0, 0, 1.3, 0.467607, -0.00526834, -0.334311 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor2"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor2/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
-[node name="Floor4 (2nd Big Room)" type="MeshInstance" parent="."]
-transform = Transform( 1.215, 0, 0, 0, 1, 0, 0, 0, 1.213, -32.6176, -0.00526262, 24.1262 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor4 (2nd Big Room)"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor4 (2nd Big Room)/StaticBody"]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
 shape = SubResource( 2 )
 __meta__ = {
@@ -296,20 +518,6 @@ __meta__ = {
 "_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
 }
 
-[node name="Floor6 (Kitchen)" type="MeshInstance" parent="."]
-transform = Transform( 2.1, 0, 0, 0, 1, 0, 0, 0, 1.7, -5.41443, -0.00526262, 59.7363 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor6 (Kitchen)"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor6 (Kitchen)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
 [node name="Floor7 (1Secret Entrance)" type="MeshInstance" parent="."]
 transform = Transform( -1.50804e-08, 0, 0.29, 0, 1, 0, -0.345, 0, -1.26763e-08, 3.78678, -0.00526834, 39.5484 )
 mesh = SubResource( 1 )
@@ -324,20 +532,6 @@ __meta__ = {
 "_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
 }
 
-[node name="Floor8 (1 Secret Room)" type="MeshInstance" parent="."]
-transform = Transform( 0.9, 0, 0, 0, 1, 0, 0, 0, 1, -2.25099, -0.00526834, 26.4569 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor8 (1 Secret Room)"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor8 (1 Secret Room)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
 [node name="Floor9 (exit kitchen)" type="MeshInstance" parent="."]
 transform = Transform( -1.50804e-08, 0, 0.29, 0, 1, 0, -0.345, 0, -1.26763e-08, -29.1942, 0.0527723, 73.0614 )
 mesh = SubResource( 1 )
@@ -346,107 +540,6 @@ material/0 = SubResource( 3 )
 [node name="StaticBody" type="StaticBody" parent="Floor9 (exit kitchen)"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor9 (exit kitchen)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
-[node name="Floor10 (deteriorating room)" type="MeshInstance" parent="."]
-transform = Transform( 1.7, 0, 0, 0, 1, 0, 0, 0, 1.2, -48.7831, -0.00526834, 64.7856 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-__meta__ = {
-"_editor_description_": "This room may be given a taller ceiling for the experimentation of a platforming area, as it would be bad to have a platforming area in level 1 and assume people know how to do it already."
-}
-
-[node name="StaticBody" type="StaticBody" parent="Floor10 (deteriorating room)"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor10 (deteriorating room)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
-[node name="Floor11 (corridor2)" type="MeshInstance" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 1, 0, 0, 0, 2.7, -56.8952, -0.00526834, 26.1421 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor11 (corridor2)"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor11 (corridor2)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
-[node name="Floor12 (look out! room)" type="MeshInstance" parent="."]
-transform = Transform( 1.4, 0, 0, 0, 1, 0, 0, 0, 1, -64.7785, -0.00526834, -10.7788 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor12 (look out! room)"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor12 (look out! room)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
-[node name="Floor13 (corridor filled with doors)" type="MeshInstance" parent="."]
-transform = Transform( 2.2, 0, 0, 0, 1, 0, 0, 0, 0.8, -84.521, -0.00526834, 25.8842 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor13 (corridor filled with doors)"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor13 (corridor filled with doors)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
-[node name="Floor14 (2 Secret Room)" type="MeshInstance" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, -72.5836, -0.00526834, 41.6287 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor14 (2 Secret Room)"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor14 (2 Secret Room)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
-[node name="Floor15 (3 Secret Room)" type="MeshInstance" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.4, -95.5622, -0.00526834, 13.9914 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor15 (3 Secret Room)"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor15 (3 Secret Room)/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
-}
-
-[node name="Floor16 (Arena Room)" type="MeshInstance" parent="."]
-transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 3, -130.852, -0.00526834, 26.2788 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor16 (Arena Room)"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor16 (Arena Room)/StaticBody"]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
 shape = SubResource( 2 )
 __meta__ = {
@@ -657,62 +750,14 @@ __meta__ = {
 "_editor_description_": "This is ideally the dining table, with various things around it to interact with."
 }
 
-[node name="Lamp" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.163, 0, 0, 0, 1, 0, 0, 0, 0.164, 9.73955, 0.0257316, 9.22395 )
-
 [node name="money" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -8.10215, 1.49209, 2.31277 )
-
-[node name="money2" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -30.71, 1.49209, -5.54057 )
-
-[node name="money3" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -24.9581, 1.49209, -2.91485 )
-
-[node name="money4" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -32.345, 1.49209, 32.7785 )
-
-[node name="money5" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -40.2061, 1.49209, 28.6008 )
-
-[node name="money6" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -7.92747, 1.49209, 32.0252 )
-
-[node name="money7" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -11.1213, 1.49209, 49.9366 )
-
-[node name="money8" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0653679, 2.97948, 68.8272 )
-
-[node name="money9" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -54.6431, 1.49209, 69.9302 )
-
-[node name="money10" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -59.8817, 1.49209, 58.1966 )
-
-[node name="money11" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -57.5129, 1.49209, 64.0928 )
 
 [node name="money12" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -61.3141, 7.5518, 21.3485 )
 
 [node name="money13" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -58.4147, 7.5518, 21.3485 )
-
-[node name="money14" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -72.7814, 1.49209, -4.20025 )
-
-[node name="money15" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -72.7814, 1.49209, -10.3448 )
-
-[node name="money16" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -72.7814, 1.49209, -16.546 )
-
-[node name="money17" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -76.0086, 1.49209, 47.7117 )
-
-[node name="money18" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -70.6038, 1.49209, 44.4558 )
 
 [node name="money19" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -119.541, 4.32877, 9.54219 )
@@ -740,12 +785,3 @@ transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -117.82
 
 [node name="money27" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -130.838, 32.439, 16.283 )
-
-[node name="money28" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -22.9285, 1.49209, 46.8768 )
-
-[node name="money29" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 3.96319, 2.88654, 66.2812 )
-
-[node name="money30" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -20.2587, 1.45946, 60.3742 )
