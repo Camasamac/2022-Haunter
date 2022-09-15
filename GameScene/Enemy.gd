@@ -26,3 +26,8 @@ func _ready():
 func _on_Timer_timeout():
 	move_to(player.global_transform.origin)
 	#this timer seems to be messing up my current enemy, as it stops the game after 2 seconds (the set time).
+
+func _on_Area_body_entered(body):
+	if (body.name == "Player"):
+		Global.player_health-= 10
+		queue_free()

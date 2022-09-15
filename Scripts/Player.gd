@@ -50,6 +50,9 @@ func _process (delta):
 	mouseDelta = Vector2()
 
 	$Camera/CurrentScoreNumberText.text = str(Global.Current_Score)
+	if Global.player_health <= 0:
+		print("You have died.")
+		get_tree().change_scene("res://EndScenes/LoseScene.tscn")
 
 # called every physics step
 func _physics_process (delta):
