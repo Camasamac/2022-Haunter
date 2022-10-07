@@ -30,3 +30,6 @@ margin_left = 94.0
 margin_top = -1.0
 margin_right = 134.0
 margin_bottom = 13.0
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )

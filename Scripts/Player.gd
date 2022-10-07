@@ -1,5 +1,14 @@
 extends KinematicBody
 
+var move_vec = Vector3()
+
+#This loads in the Bullet3D file ands stores it onto a variable called "FIREBALL"
+const FIREBALL = preload("res://Bullets/Bullet.tscn")
+# This tells when you can shoot
+var BulletReloadTimer = 0
+# This is how many bullets you have shot
+var BulletCount = 0
+
 # Physics variables that will help for the player.
 var movementSpeed = 10.0 # How fast the player can move.
 var jumpStrength = 13.0 # How much force used to make player jump.
@@ -26,7 +35,7 @@ func _input (event):
 	# THIS BLOCK OF CODE MEANS THAT ONCE THE WINDOW IS CLICKED THE MOUSE IS CAPTURED AND IF YOU PRESS ESCAPE IT IS FREED.
 	if event is InputEventMouseMotion:
 		mouseDelta = event.relative
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("Shooting"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if event.is_action_pressed("ui_cancel"):
@@ -53,6 +62,27 @@ func _process (delta):
 	if Global.player_health <= 0:
 		print("You have died.")
 		get_tree().change_scene("res://EndScenes/LoseScene.tscn")
+		
+	# When the timer runs out, the bullet will automatically reload.
+	# This makes it so that you won't have too many bullets on screen at once.
+	# This saves memory so that your game and computer won't slow down.
+	BulletReloadTimer +=1
+	if BulletReloadTimer >= 20:
+		BulletReloadTimer = 0
+		BulletCount = 0
+
+func _unhandled_input(event):
+# If the 'shooting' button aka the (left mouse) button is pressed and there are more than 3
+# bullets, then fire and count the bullets until it gets to three
+	if Input.is_action_just_pressed("Shooting") and BulletCount < 3:
+		BulletCount+=1
+		#Here we attach the Bullet3D File to the FIREBALL Variable constant.
+		var Bullet = FIREBALL.instance()
+		# After storing the whole FILE of the bullet3D, we can attach code for the Position3D that
+		# was implemented to the player, so that the bullet can come FROM the player to begin with.
+		Bullet.start($Position3D.global_transform)
+		# Now we have to connect all of this to the player, so that they have control in this sequence.
+		get_parent().add_child(Bullet)
 
 # called every physics step
 func _physics_process (delta):

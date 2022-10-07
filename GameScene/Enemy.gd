@@ -30,4 +30,5 @@ func _on_Timer_timeout():
 func _on_Area_body_entered(body):
 	if (body.name == "Player"):
 		Global.player_health-= 10
+		print("Health: " + str(int(Global.player_health)))
 		queue_free()
