@@ -34,7 +34,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1.123, 0, 0, 0, 2.606, 0, 0, 0, 0.857, 0, 0.434971, 0 )
+transform = Transform( 1.012, 0, 0, 0, 2.606, 0, 0, 0, 0.72, 0, 0.434971, 0 )
 shape = SubResource( 4 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

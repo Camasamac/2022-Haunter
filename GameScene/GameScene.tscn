@@ -617,8 +617,20 @@ __meta__ = {
 "_editor_description_": "This is ideally the dining table, with various things around it to interact with."
 }
 
+[node name="Enemy2" parent="Navigation" instance=ExtResource( 4 )]
+transform = Transform( 0.837, 0, 0, 0, 0.784, 0, 0, 0, 1, -31.2597, 3.39592, 19.7662 )
+
+[node name="Enemy3" parent="Navigation" instance=ExtResource( 4 )]
+transform = Transform( 0.837, 0, 0, 0, 0.784, 0, 0, 0, 1, -40.9352, 2.99068, 21.642 )
+
+[node name="Enemy5" parent="Navigation" instance=ExtResource( 4 )]
+transform = Transform( 0.700569, 0, 0, 0, 0.614656, 0, 0, 0, 1, -36.8535, 2.38175, 20.8919 )
+
+[node name="Enemy4" parent="Navigation" instance=ExtResource( 4 )]
+transform = Transform( 0.837, 0, 0, 0, 0.784, 0, 0, 0, 1, -28.7219, 3.24185, 17.2952 )
+
 [node name="Floor(corridor1)" type="MeshInstance" parent="."]
-transform = Transform( 1.614, 0, 0, 0, 1, 0, 0, 0, 0.353, -28.2186, 0.0145299, 8.74319 )
+transform = Transform( 1.614, 0, 0, 0, 1, 0, 0, 0, 0.353, -28.264, 0.0505893, 8.77192 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 

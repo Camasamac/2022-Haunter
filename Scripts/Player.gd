@@ -18,7 +18,7 @@ var gravity = 20 # Gravity's strength.
 # cam look
 var minCamVerticalAngle = -90.0		# Limit camera view to straight down.
 var maxCamVerticalAngle = 90.0		# Limit camera view to straight up.
-var lookSensitivity = 1			# How fast camera moves. 'mouse sensitivity'. 
+var lookSensitivity = 0.8			# How fast camera moves. 'mouse sensitivity'. 
 
 # vectors
 var playerVelocity : Vector3 = Vector3() 	# Players Velocity
@@ -59,6 +59,7 @@ func _process (delta):
 	mouseDelta = Vector2()
 
 	$Camera/CurrentScoreNumberText.text = str(Global.Current_Score)
+	$Camera/PlayerHealthNumberText.text = str(Global.player_health)
 	if Global.player_health <= 0:
 		print("You have died.")
 		get_tree().change_scene("res://EndScenes/LoseScene.tscn")

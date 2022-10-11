@@ -106,11 +106,12 @@ margin_bottom = 599.0
 hint_tooltip = "Look forward to future updates!"
 mouse_filter = 1
 custom_fonts/font = SubResource( 3 )
-text = "Game designed by Cameron BLACK, Version 0.03"
+text = "Game designed by Cameron BLACK, Version number pending"
 __meta__ = {
 "_editor_description_": "The version number should change with every edition of the game, or something new being added. The version should reach 1 when the game is finished."
 }
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="VBoxContainer/OptionsButton" method="_on_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer/QuitButton" method="_on_Button_pressed"]

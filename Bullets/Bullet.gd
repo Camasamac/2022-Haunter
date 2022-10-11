@@ -1,7 +1,7 @@
 extends Area
 
 # Setting up the bullet's speed
-var speed = 7
+var speed = 22
 var velocity = Vector3()
 
 # the onready function below makes sure that everything is set up and ready before it
@@ -30,7 +30,11 @@ func _process(delta):
 # If a bullet enters Anything, it will be destroyed
 func _on_Bullet_body_entered(body):
 	print(body.name)
-	if body.name is StaticBody:
+	if body.get_name() == "StaticBody":
+		queue_free()
+	if body.get_name() == "Enemy":
+		queue_free()
+	if body.get_name() == "CSGBox":
 		queue_free()
 # Whenever the timer runs out, the timer will self-destruct (i.e disappear)
 func _on_Timer_timeout():

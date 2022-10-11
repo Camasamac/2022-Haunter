@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Images/leather.jpg" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.75
@@ -20,16 +21,40 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.927507, 0.000175178 )
 environment = ExtResource( 1 )
 current = true
 
+[node name="TextureRect" type="TextureRect" parent="Camera"]
+modulate = Color( 0.505882, 0.505882, 0.505882, 1 )
+margin_left = -16.0
+margin_top = 532.0
+margin_right = 784.0
+margin_bottom = 1332.0
+rect_scale = Vector2( 1.326, 0.097 )
+texture = ExtResource( 3 )
+
 [node name="CurrentScoreText" type="Label" parent="Camera"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 16.0
+margin_top = 545.0
+margin_right = 106.0
+margin_bottom = 559.0
 text = "Current Score:"
 
 [node name="CurrentScoreNumberText" type="Label" parent="Camera"]
-margin_left = 94.0
-margin_top = -1.0
-margin_right = 134.0
-margin_bottom = 13.0
+margin_left = 110.0
+margin_top = 545.0
+margin_right = 150.0
+margin_bottom = 559.0
+
+[node name="PlayerHealthText" type="Label" parent="Camera"]
+margin_left = 17.0
+margin_top = 566.0
+margin_right = 107.0
+margin_bottom = 580.0
+text = "Player Health:"
+
+[node name="PlayerHealthNumberText" type="Label" parent="Camera"]
+margin_left = 111.0
+margin_top = 566.0
+margin_right = 151.0
+margin_bottom = 580.0
 
 [node name="Position3D" type="Position3D" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
