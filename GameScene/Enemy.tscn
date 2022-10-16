@@ -23,10 +23,9 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 mesh = SubResource( 2 )
 
 [node name="Area" type="Area" parent="."]
-transform = Transform( 1.001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
-transform = Transform( 1.212, 0, 0, 0, 2.531, 0, 0, 0, 0.71, 0, 0, 0 )
+transform = Transform( 1.13, 0, 0, 0, -5.02244e-08, -1.753, 0, 1.149, -7.66261e-08, 0, 0, 0 )
 shape = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="Area"]
@@ -34,7 +33,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1.012, 0, 0, 0, 2.606, 0, 0, 0, 0.72, 0, 0.434971, 0 )
+transform = Transform( 0.964, 0, 0, 0, 2.258, 0, 0, 0, 1, 0, 0.106107, 0 )
 shape = SubResource( 4 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

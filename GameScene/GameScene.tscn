@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Textures/seamless carpet texture.jpg" type="Texture" id=1]
 [ext_resource path="res://Player Stuff/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Models/stack of money pickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://LampPost.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Textures/wood seamless.jpeg" type="Texture" id=7]
+[ext_resource path="res://GameScene/doorportal.gd" type="Script" id=8]
 
 [sub_resource type="QuadMesh" id=4]
 
@@ -53,7 +54,8 @@ visible = false
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.39518, 1.99787, -9.17772 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -150.971, 35.4604, 25.2104 )
+scene_to_load = "res://Scripts/Game1-to-Game2.tscn"
 
 [node name="wall1" parent="." instance=ExtResource( 3 )]
 transform = Transform( 24.5, 0, 0, 0, 6, 0, 0, 0, 0.6, -0.0968955, 2.82329, -11.9428 )
@@ -262,7 +264,7 @@ transform = Transform( -7.43094e-07, 0, 1, 0, 12, 0, -17, 0, -4.37114e-08, -170.
 [node name="Navigation" type="Navigation" parent="."]
 
 [node name="Enemy" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80771, 2.57801, 6.74728 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80771, 2.97301, 6.74728 )
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 navmesh = SubResource( 10 )
@@ -757,7 +759,7 @@ mesh = SubResource( 1 )
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.01, 0.031, 0.043 )
 shape = SubResource( 2 )
 __meta__ = {
-"_editor_description_": "You need to alter the top left x and botoom right z values in order to adjust the collision area of a floor."
+"_editor_description_": ""
 }
 
 [node name="Floor5 (To Kitchen)" type="MeshInstance" parent="."]
@@ -928,3 +930,8 @@ transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -32.345
 
 [node name="money5" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -40.2061, 1.49209, 28.6008 )
+
+[node name="DoorToLevel2" type="CSGBox" parent="."]
+transform = Transform( 0.173, 0, 0, 0, 4.8, 0, 0, 0, 2.3, -170.116, 34.5025, 25.9961 )
+use_collision = true
+script = ExtResource( 8 )

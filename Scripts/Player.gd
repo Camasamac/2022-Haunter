@@ -116,3 +116,15 @@ func _physics_process (delta):
 	# jump if we press the jump button and are standing on the floor
 	if Input.is_action_pressed("jump") and is_on_floor():
 		playerVelocity.y = jumpStrength
+	
+	# Very quickly in class, we implemented the power of sprinting while HOLDING down the shift key, where it
+	# basically changes the speed in which the player runs when held.
+	if Input.is_action_pressed("run"):
+		movementSpeed = 15
+	else:
+		movementSpeed = 10
+
+export(String) var scene_to_load
+
+func _on_Area_body_entered(Player):
+		get_tree().change_scene(scene_to_load)
