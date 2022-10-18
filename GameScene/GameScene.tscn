@@ -54,7 +54,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -150.971, 35.4604, 25.2104 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0252266, 2.25468, -7.98969 )
 scene_to_load = "res://Scripts/Game1-to-Game2.tscn"
 
 [node name="wall1" parent="." instance=ExtResource( 3 )]
@@ -264,7 +264,7 @@ transform = Transform( -7.43094e-07, 0, 1, 0, 12, 0, -17, 0, -4.37114e-08, -170.
 [node name="Navigation" type="Navigation" parent="."]
 
 [node name="Enemy" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80771, 2.97301, 6.74728 )
+transform = Transform( 1, 0, 0, 0, 0.751128, 0, 0, 0, 1, -55.3064, 2.97301, 40.8086 )
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 navmesh = SubResource( 10 )
@@ -620,16 +620,16 @@ __meta__ = {
 }
 
 [node name="Enemy2" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 0.837, 0, 0, 0, 0.784, 0, 0, 0, 1, -31.2597, 3.39592, 19.7662 )
+transform = Transform( 0.837, 0, 0, 0, 0.613514, 0, 0, 0, 1, -29.0376, 3.39592, 19.7662 )
 
 [node name="Enemy3" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 0.837, 0, 0, 0, 0.784, 0, 0, 0, 1, -40.9352, 2.99068, 21.642 )
+transform = Transform( 0.837, 0, 0, 0, 0.529072, 0, 0, 0, 1, -43.5529, 2.99068, 67.1776 )
 
 [node name="Enemy5" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 0.700569, 0, 0, 0, 0.614656, 0, 0, 0, 1, -36.8535, 2.38175, 20.8919 )
+transform = Transform( 0.700569, 0, 0, 0, 0.614656, 0, 0, 0, 1, -35.4617, 2.38175, 33.6317 )
 
 [node name="Enemy4" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 0.837, 0, 0, 0, 0.784, 0, 0, 0, 1, -28.7219, 3.24185, 17.2952 )
+transform = Transform( 0.837, 0, 0, 0, 0.585924, 0, 0, 0, 1, -2.00508, 11.7175, 53.9896 )
 
 [node name="Floor(corridor1)" type="MeshInstance" parent="."]
 transform = Transform( 1.614, 0, 0, 0, 1, 0, 0, 0, 0.353, -28.264, 0.0505893, 8.77192 )
