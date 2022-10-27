@@ -32,7 +32,9 @@ func _on_Bullet_body_entered(body):
 	print(body.name)
 	if body.get_name() == "StaticBody":
 		queue_free()
-	if body.get_name() == "Enemy":
+	# Thank you Matt for helping me figure out how to kill enemies by using 'if body has method' to fix it!
+	if body.has_method("take_damage"):
+		body.take_damage(1)
 		queue_free()
 	if body.get_name() == "CSGBox":
 		queue_free()

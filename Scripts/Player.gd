@@ -44,6 +44,7 @@ func _input (event):
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			mouseDelta = event.relative
+
 		
 # called every frame
 func _process (delta):

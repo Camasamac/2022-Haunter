@@ -130,7 +130,7 @@ transform = Transform( -1.48619e-06, 0, 0.6, 0, 6, 0, -34, 0, -2.62268e-08, -26.
 transform = Transform( 4.05446e-07, 0, -0.6, 0, 6, 0, 34, 0, 7.15493e-09, 15.5787, 2.82329, 59.877 )
 
 [node name="wall22" parent="." instance=ExtResource( 3 )]
-transform = Transform( -48, 0, -9.05975e-08, 0, 6, 0, 7.2478e-06, 0, -0.6, -8.47482, 2.82329, 76.4872 )
+transform = Transform( -48, 0, -9.05975e-08, 0, 6, 0, 7.2478e-06, 0, -0.6, -7.68566, 2.82329, 76.4872 )
 
 [node name="wall23" parent="." instance=ExtResource( 3 )]
 transform = Transform( 5.5, 0, 0, 0, 6, 0, 0, 0, 0.6, -29.1339, 2.82329, 69.7542 )
@@ -264,7 +264,7 @@ transform = Transform( -7.43094e-07, 0, 1, 0, 12, 0, -17, 0, -4.37114e-08, -170.
 [node name="Navigation" type="Navigation" parent="."]
 
 [node name="Enemy" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 0.751128, 0, 0, 0, 1, -55.3064, 2.97301, 40.8086 )
+transform = Transform( 1, 0, 0, 0, 0.751128, 0, 0, 0, 1, -55.3064, 2.09633, 40.8086 )
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 navmesh = SubResource( 10 )
@@ -698,7 +698,7 @@ __meta__ = {
 }
 
 [node name="Ceiling5" type="MeshInstance" parent="."]
-transform = Transform( -1.1, 1.50996e-07, 0, -1.66095e-07, -1, 0, 0, 0, 1.2, -1.73105, 5.91408, 26.1808 )
+transform = Transform( -1.1, 1.50996e-07, 0, -1.66095e-07, -1, 0, 0, 0, 1.2, -1.73105, 5.69189, 26.1808 )
 mesh = SubResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Ceiling5"]

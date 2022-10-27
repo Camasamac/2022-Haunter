@@ -4,6 +4,7 @@ onready var nav = get_parent()
 var path = []
 var path_node = 0
 var speed = 10
+var enemy_health = 3
 onready var player =$"../../Player"
 # The double dot pattern that appears within this means that the enemy (while within the Navigation group) needs
 # to look beyond that group (outside it by one level) and find the entity of the "player".
@@ -29,9 +30,12 @@ func _on_Timer_timeout():
 
 func _on_Area_body_entered(body):
 	if (body.name == "Player"):
-		Global.player_health-= 20
+		Global.player_health -= 20
 		print("Health: " + str(int(Global.player_health)))
 		queue_free()
 
 func take_damage(damage):
 	print("ouch")
+	enemy_health -= 1
+	if enemy_health == 0:
+		queue_free()

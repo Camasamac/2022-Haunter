@@ -27,7 +27,6 @@ transform = Transform( 1.135, 0, 0, 0, -5.00495e-08, -1.757, 0, 1.145, -7.68009e
 shape = SubResource( 4 )
 
 [node name="Area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Timer" type="Timer" parent="Area"]
 wait_time = 2.0
