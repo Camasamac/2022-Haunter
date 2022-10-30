@@ -121,11 +121,12 @@ func _physics_process (delta):
 	# Very quickly in class, we implemented the power of sprinting while HOLDING down the shift key, where it
 	# basically changes the speed in which the player runs when held.
 	if Input.is_action_pressed("run"):
-		movementSpeed = 15
+		movementSpeed = 30
 	else:
 		movementSpeed = 10
 
 export(String) var scene_to_load
 
-func _on_Area_body_entered(Player):
+func _on_Area_area_entered(DoorPortal):
 		get_tree().change_scene(scene_to_load)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
