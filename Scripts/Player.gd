@@ -1,4 +1,5 @@
 extends KinematicBody
+export(String) var scene_to_load
 
 var move_vec = Vector3()
 
@@ -82,7 +83,10 @@ func _unhandled_input(event):
 		var Bullet = FIREBALL.instance()
 		# After storing the whole FILE of the bullet3D, we can attach code for the Position3D that
 		# was implemented to the player, so that the bullet can come FROM the player to begin with.
-		Bullet.start($Position3D.global_transform)
+		
+		# Dylan gave me the tip that if you connect the bullet spawn (in this case, position3D) to the
+		# camera, you can shoot at any angle.
+		Bullet.start($Camera/Position3D.global_transform)
 		# Now we have to connect all of this to the player, so that they have control in this sequence.
 		get_parent().add_child(Bullet)
 
@@ -125,8 +129,8 @@ func _physics_process (delta):
 	else:
 		movementSpeed = 10
 
-export(String) var scene_to_load
-
-func _on_Area_area_entered(DoorPortal):
+func _on_Area_area_entered(area):
+	if area.name == "DoorPortal":
+		print(area.name)
 		get_tree().change_scene(scene_to_load)
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
