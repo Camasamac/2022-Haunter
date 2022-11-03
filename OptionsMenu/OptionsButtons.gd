@@ -1,7 +1,8 @@
 extends Button
 
 func _ready():
-	$VBoxContainer/SonicSpeedButton.pressed = Global.sonic_speed
+	self.pressed = Global.sonic_speed
+	#$VBoxContainer/SonicSpeedButton.pressed = 
 	print("bing")
 
 func _on_FullScreenButton_pressed():
