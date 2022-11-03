@@ -106,7 +106,7 @@ transform = Transform( -1.35505e-06, 0, 0.6, 0, 9, 0, -31, 0, -2.62268e-08, -44.
 transform = Transform( 18, 0, 0, 0, 9, 0, 0, 0, 0.6, -28.7803, 4.33031, 12.0274 )
 
 [node name="wall12" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1.35505e-06, 0, -0.6, 0, 9, 0, 31, 0, -2.62268e-08, -20.6175, 4.24451, 27.5521 )
+transform = Transform( -1.35505e-06, 0, -0.6, 0, 9, 0, 31, 0, -2.62268e-08, -20.6175, 4.24451, 27.5133 )
 
 [node name="wall13" parent="." instance=ExtResource( 3 )]
 transform = Transform( -18, 0, -9.05975e-08, 0, 9, 0, 2.71792e-06, 0, -0.6, -35.3476, 4.42195, 36.0845 )
@@ -650,7 +650,7 @@ __meta__ = {
 }
 
 [node name="Floor(corridor1)" type="MeshInstance" parent="."]
-transform = Transform( 1.614, 0, 0, 0, 1, 0, 0, 0, 0.353, -28.264, 0.0505893, 8.77192 )
+transform = Transform( 1.614, 0, 0, 0, 1, 0, 0, 0, 0.353, -28.2635, -0.0130792, 8.77546 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 

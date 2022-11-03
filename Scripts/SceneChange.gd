@@ -12,3 +12,6 @@ func _on_StartButton_pressed():
 	Global.Current_Score = 0
 # These are referred by Global instead of GlobalVariables because it is referenced as 'Global'
 # in "Project" > "Project Settings" > "Autoload". Connected to global.gd.
+
+
+

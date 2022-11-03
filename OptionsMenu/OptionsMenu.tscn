@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/SceneChange.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/romanus/ROMANUS.otf" type="DynamicFontData" id=2]
@@ -14,6 +14,10 @@ font_data = ExtResource( 2 )
 size = 38
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 25
+font_data = ExtResource( 3 )
+
 [sub_resource type="DynamicFont" id=3]
 size = 20
 font_data = ExtResource( 3 )
@@ -24,13 +28,13 @@ font_data = ExtResource( 3 )
 
 [node name="Options" type="Node2D"]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBox for Options Quit" type="VBoxContainer" parent="."]
 margin_left = 32.0
 margin_top = 32.0
 margin_right = 163.0
 margin_bottom = 98.0
 
-[node name="OptionsQuit" type="Button" parent="VBoxContainer"]
+[node name="OptionsQuit" type="Button" parent="VBox for Options Quit"]
 self_modulate = Color( 0.670588, 0.486275, 0.764706, 1 )
 margin_right = 131.0
 margin_bottom = 66.0
@@ -40,21 +44,29 @@ text = "go back"
 script = ExtResource( 1 )
 scene_to_load = "res://MainMenu/MainMenu.tscn"
 
-[node name="VBoxContainer-Opt" type="VBoxContainer" parent="."]
-margin_left = 32.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 18.0
 margin_top = 114.0
-margin_right = 219.0
-margin_bottom = 174.0
+margin_right = 218.0
+margin_bottom = 199.0
 
-[node name="FullScreenButton" type="Button" parent="VBoxContainer-Opt"]
+[node name="FullScreenButton" type="Button" parent="VBoxContainer"]
 modulate = Color( 0.862745, 0.533333, 0.337255, 1 )
-margin_right = 188.0
-margin_bottom = 60.0
+margin_right = 200.0
+margin_bottom = 41.0
 size_flags_vertical = 3
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Fullscreen"
+script = ExtResource( 4 )
+
+[node name="SonicSpeedButton" type="CheckButton" parent="VBoxContainer"]
+margin_top = 45.0
+margin_right = 200.0
+margin_bottom = 85.0
+custom_fonts/font = SubResource( 5 )
+text = "Sonic Speed"
 script = ExtResource( 4 )
 
 [node name="FullScreenDescription" type="Label" parent="."]
@@ -74,5 +86,6 @@ custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "WARNING: May resize the HUD to not fit certain assets."
 
-[connection signal="pressed" from="VBoxContainer/OptionsQuit" to="VBoxContainer/OptionsQuit" method="_on_Button_pressed"]
-[connection signal="pressed" from="VBoxContainer-Opt/FullScreenButton" to="VBoxContainer-Opt/FullScreenButton" method="_on_FullScreenButton_pressed"]
+[connection signal="pressed" from="VBox for Options Quit/OptionsQuit" to="VBox for Options Quit/OptionsQuit" method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/FullScreenButton" to="VBoxContainer/FullScreenButton" method="_on_FullScreenButton_pressed"]
+[connection signal="toggled" from="VBoxContainer/SonicSpeedButton" to="VBoxContainer/SonicSpeedButton" method="_on_SonicSpeedButton_toggled"]

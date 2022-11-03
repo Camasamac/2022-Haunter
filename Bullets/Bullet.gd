@@ -1,7 +1,7 @@
 extends Area
 
 # Setting up the bullet's speed
-var speed = 22
+var speed = 30
 var velocity = Vector3()
 
 # the onready function below makes sure that everything is set up and ready before it
@@ -12,12 +12,12 @@ onready var timer = get_node("Timer")
 
 # Again, as mentioned above the "Onready" function refers to this "func_ready()" section.
 # It makes sure that everything in this section is ready for executing anything.
-# func _ready():
+func _ready():
 #	# This delays the time for one second until the bullet self-destructs.
 #	# You can increase the value for the bullet's distance.
-#	timer.set_wait_time(1)
+	timer.set_wait_time(0.8)
 #	#This "start()" function interacts with the "start()" function in the player3D.gd file
-#	timer.start()
+	timer.start()
 	
 # These two functions control the bullet's movement.
 func start(xform):
