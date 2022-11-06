@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/SceneChange.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/romanus/ROMANUS.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Fonts/arial_narrow_7/arial_narrow_7.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://OptionsMenu/OptionsButtons.gd" type="Script" id=4]
+[ext_resource path="res://OptionsMenu/OptionButtons.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -49,6 +49,7 @@ margin_left = 18.0
 margin_top = 114.0
 margin_right = 218.0
 margin_bottom = 199.0
+script = ExtResource( 4 )
 
 [node name="FullScreenButton" type="Button" parent="VBoxContainer"]
 modulate = Color( 0.862745, 0.533333, 0.337255, 1 )
@@ -59,7 +60,6 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Fullscreen"
-script = ExtResource( 4 )
 
 [node name="SonicSpeedButton" type="CheckButton" parent="VBoxContainer"]
 margin_top = 45.0
@@ -67,7 +67,6 @@ margin_right = 200.0
 margin_bottom = 85.0
 custom_fonts/font = SubResource( 5 )
 text = "Sonic Speed"
-script = ExtResource( 4 )
 
 [node name="FullScreenDescription" type="Label" parent="."]
 margin_left = 229.0
@@ -87,5 +86,5 @@ custom_fonts/font = SubResource( 4 )
 text = "WARNING: May resize the HUD to not fit certain assets."
 
 [connection signal="pressed" from="VBox for Options Quit/OptionsQuit" to="VBox for Options Quit/OptionsQuit" method="_on_Button_pressed"]
-[connection signal="pressed" from="VBoxContainer/FullScreenButton" to="VBoxContainer/FullScreenButton" method="_on_FullScreenButton_pressed"]
-[connection signal="toggled" from="VBoxContainer/SonicSpeedButton" to="VBoxContainer/SonicSpeedButton" method="_on_SonicSpeedButton_toggled"]
+[connection signal="pressed" from="VBoxContainer/FullScreenButton" to="VBoxContainer" method="_on_FullScreenButton_pressed"]
+[connection signal="toggled" from="VBoxContainer/SonicSpeedButton" to="VBoxContainer" method="_on_SonicSpeedButton_toggled"]

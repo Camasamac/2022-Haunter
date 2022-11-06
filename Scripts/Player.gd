@@ -1,6 +1,6 @@
 extends KinematicBody
+# The below 'scene_to_load' variable helps define how a player gets into another level.
 export(String) var scene_to_load
-
 var move_vec = Vector3()
 
 #This loads in the Bullet3D file ands stores it onto a variable called "FIREBALL"
@@ -13,13 +13,14 @@ var BulletCount = 0
 # Physics variables that will help for the player.
 var movementSpeed = 10.0 # How fast the player can move.
 var jumpStrength = 13.0 # How much force used to make player jump.
-# ^ I thought of a gamemode of 'bunny mode' where there is a customised map for this mode with heigher ceilings and roofs (given that the jump strength is around 20-30). With this, likely jumpier enemies.
+# ^ I thought of a gamemode of 'bunny mode' where there is a customised map for this mode with 
+# heigher ceilings and roofs (given that the jump strength is around 20-30). With this, likely jumpier enemies.
 var gravity = 20 # Gravity's strength.
 
 # cam look
 var minCamVerticalAngle = -90.0		# Limit camera view to straight down.
 var maxCamVerticalAngle = 90.0		# Limit camera view to straight up.
-var lookSensitivity = 0.8			# How fast camera moves. 'mouse sensitivity'. 
+var lookSensitivity = 1.6			# How fast camera moves. 'mouse sensitivity'. 
 
 # vectors
 var playerVelocity : Vector3 = Vector3() 	# Players Velocity
@@ -37,8 +38,10 @@ func _input (event):
 	if event is InputEventMouseMotion:
 		mouseDelta = event.relative
 	if event.is_action_pressed("Shooting"):
+		# If the player is shooting and if the player has free mouse movement, first, change the mouse movement to be captured by the game.
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		# If the player presses escape, to enter the pause menu, free the mouse movement for them to interact with the buttons.
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		#Did the mouse move?
@@ -46,8 +49,7 @@ func _input (event):
 		if event is InputEventMouseMotion:
 			mouseDelta = event.relative
 
-		
-# called every frame
+# _process function is called apon every frame
 func _process (delta):
 	# rotate camera along X axis
 	camera.rotation_degrees -= Vector3(rad2deg(mouseDelta.y), 0, 0) * lookSensitivity * delta
@@ -60,6 +62,7 @@ func _process (delta):
 	# reset the mouse delta vector
 	mouseDelta = Vector2()
 
+	# This code shows the current score and health values
 	$Camera/CurrentScoreNumberText.text = str(Global.Current_Score)
 	$Camera/PlayerHealthNumberText.text = str(Global.player_health)
 	if Global.player_health <= 0:
@@ -73,6 +76,7 @@ func _process (delta):
 	if BulletReloadTimer >= 20:
 		BulletReloadTimer = 0
 		BulletCount = 0
+	# This chunk of code to determine the BulletReloadTimer may not prove to be as important.
 
 func _unhandled_input(event):
 # If the 'shooting' button aka the (left mouse) button is pressed and there are more than 3
@@ -129,8 +133,16 @@ func _physics_process (delta):
 	else:
 		movementSpeed = 10
 
+# When the player area 'interacts' (in this case, runs into) a specific area labelled 'DoorPortal', the player calls apon their
+# premade scene_to_load variable which is adjusted in the inspector on the right side of the editor. The scene the player loads
+# is designed to be the score scene that informs the player of how many enemies they've killed and gives them a button to
+# continue to the next level.
 func _on_Area_area_entered(area):
 	if area.name == "DoorPortal":
 		print(area.name)
 		get_tree().change_scene(scene_to_load)
+		Global.player_health = 100
+		Global.High_Score = Global.Current_Score
+		# Because the scene the player loads is the scoring scene (end of level 1) the player NEEDS free mouse movement to interact
+		# with the 'go to next level' button.
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

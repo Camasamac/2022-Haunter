@@ -26,8 +26,12 @@ size = 18
 font_data = ExtResource( 4 )
 
 [node name="Node2D" type="Node2D"]
+__meta__ = {
+"_editor_description_": "This is the main menu Node, which holds everything in this scene."
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.407843, 0.223529, 0.223529, 1 )
 margin_left = -9.0
 margin_top = -4.0
 margin_right = 1031.0
@@ -111,7 +115,7 @@ __meta__ = {
 "_editor_description_": "The version number should change with every edition of the game, or something new being added. The version should reach 1 when the game is finished."
 }
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="VBoxContainer/OptionsButton" method="_on_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer/QuitButton" method="_on_Button_pressed"]

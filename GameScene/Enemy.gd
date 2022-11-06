@@ -39,3 +39,4 @@ func take_damage(damage):
 	enemy_health -= 1
 	if enemy_health == 0:
 		queue_free()
+		Global.enemies_killed += 1
